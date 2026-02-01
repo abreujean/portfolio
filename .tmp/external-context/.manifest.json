@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-02-01T12:00:00Z",
+  "libraries": {
+    "wordpress": {
+      "files": [
+        {
+          "filename": "getting-started.md",
+          "topic": "theme development getting started",
+          "tech_stack": "WordPress",
+          "fetched": "2026-02-01T12:00:00Z",
+          "source": "WordPress Developer Resources"
+        },
+        {
+          "filename": "php-coding-standards.md",
+          "topic": "PHP coding standards",
+          "tech_stack": "WordPress",
+          "fetched": "2026-02-01T12:00:00Z",
+          "source": "WordPress Developer Resources"
+        },
+        {
+          "filename": "template-hierarchy.md",
+          "topic": "template hierarchy",
+          "tech_stack": "WordPress",
+          "fetched": "2026-02-01T12:00:00Z",
+          "source": "WordPress Developer Resources"
+        },
+        {
+          "filename": "plugin-hooks-actions.md",
+          "topic": "plugin API hooks and actions",
+          "tech_stack": "WordPress",
+          "fetched": "2026-02-01T12:00:00Z",
+          "source": "WordPress Developer Resources"
+        },
+        {
+          "filename": "security-best-practices.md",
+          "topic": "security best practices",
+          "tech_stack": "WordPress",
+          "fetched": "2026-02-01T12:00:00Z",
+          "source": "WordPress Developer Resources"
+        },
+        {
+          "filename": "enqueue-scripts-styles.md",
+          "topic": "script and style enqueueing",
+          "tech_stack": "WordPress",
+          "fetched": "2026-02-01T12:00:00Z",
+          "source": "WordPress Developer Resources"
+        },
+        {
+          "filename": "html-coding-standards.md",
+          "topic": "HTML coding standards",
+          "tech_stack": "WordPress",
+          "fetched": "2026-02-01T12:00:00Z",
+          "source": "WordPress Developer Resources"
+        },
+        {
+          "filename": "theme-structure.md",
+          "topic": "theme file structure",
+          "tech_stack": "WordPress",
+          "fetched": "2026-02-01T12:00:00Z",
+          "source": "WordPress Developer Resources"
+        },
+        {
+          "filename": "internationalization-functions.md",
+          "topic": "internationalization functions",
+          "tech_stack": "WordPress",
+          "fetched": "2026-02-01T12:30:00Z",
+          "source": "WordPress Developer Resources"
+        }
+      ]
+    }
+  }
+}

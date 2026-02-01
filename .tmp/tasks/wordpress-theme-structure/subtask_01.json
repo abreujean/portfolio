@@ -1,0 +1,32 @@
+{
+  "id": "wordpress-theme-structure-01",
+  "seq": "01",
+  "title": "Create core theme files (style.css, index.php, functions.php)",
+  "status": "in_progress",
+  "agent_id": "coder-agent",
+  "started_at": "2026-02-01T00:00:00Z",
+  "depends_on": [],
+  "parallel": false,
+  "suggested_agent": "CoderAgent",
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md",
+    ".opencode/context/core/standards/security-patterns.md",
+    ".tmp/external-context/wordpress/php-coding-standards.md",
+    ".tmp/external-context/wordpress/html-coding-standards.md",
+    ".tmp/external-context/wordpress/theme-structure.md"
+  ],
+  "reference_files": [
+    "color-scheme.json"
+  ],
+  "acceptance_criteria": [
+    "style.css created with WordPress theme header",
+    "index.php created with HTML5 semantic structure",
+    "functions.php created with includes for inc/ directory",
+    "All files follow WordPress coding standards"
+  ],
+  "deliverables": [
+    "style.css",
+    "index.php",
+    "functions.php"
+  ]
+}

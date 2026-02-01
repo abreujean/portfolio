@@ -1,0 +1,31 @@
+{
+  "id": "wordpress-theme-structure",
+  "name": "WordPress Theme Structure",
+  "status": "active",
+  "objective": "Create complete WordPress theme file structure with minimal functional content",
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md",
+    ".opencode/context/core/standards/security-patterns.md",
+    ".opencode/context/ui/web/ui-styling-standards.md",
+    ".opencode/context/ui/web/design-systems.md",
+    ".tmp/external-context/wordpress/php-coding-standards.md",
+    ".tmp/external-context/wordpress/html-coding-standards.md",
+    ".tmp/external-context/wordpress/theme-structure.md",
+    ".tmp/external-context/wordpress/template-hierarchy.md",
+    ".tmp/external-context/wordpress/security-best-practices.md",
+    ".tmp/external-context/wordpress/enqueue-scripts-styles.md"
+  ],
+  "reference_files": [
+    "color-scheme.json"
+  ],
+  "exit_criteria": [
+    "All WordPress theme files created with proper structure",
+    "Theme follows WordPress coding standards",
+    "Assets properly enqueued",
+    "Color scheme integrated into CSS variables",
+    "Theme is functional and ready for development"
+  ],
+  "subtask_count": 9,
+  "completed_count": 0,
+  "created_at": "2026-02-01T12:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "wordpress-theme-structure-09",
+  "seq": "09",
+  "title": "Create placeholder files (images, .gitkeep)",
+  "status": "in_progress",
+  "agent_id": "coder-agent",
+  "started_at": "2026-01-28T00:00:00Z",
+  "depends_on": [],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [],
+  "reference_files": [],
+  "acceptance_criteria": [
+    "assets/images/ directory created",
+    "assets/images/.gitkeep created",
+    "templates/social-links.php created with social links structure"
+  ],
+  "deliverables": [
+    "assets/images/.gitkeep",
+    "templates/social-links.php"
+  ]
+}

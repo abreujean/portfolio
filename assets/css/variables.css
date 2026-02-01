@@ -1,0 +1,158 @@
+/* CSS Custom Properties - Color Scheme */
+/* Generated from color-scheme.json */
+
+:root {
+    /* Page Background Colors */
+    --page-bg-primary: #0A0D16;
+    --page-bg-secondary: #0C1020;
+    --page-bg-tertiary: #090B14;
+    --page-bg-section-alt: #0E1326;
+    --page-bg-overlay: rgba(0, 0, 0, 0.5);
+    --page-bg-gradient-start: #0A0D16;
+    --page-bg-gradient-middle: #0C1020;
+    --page-bg-gradient-end: #090B14;
+
+    /* Menu Colors */
+    --menu-bg: rgba(123, 74, 226, 0.15);
+    --menu-bg-blur: rgba(10, 13, 22, 0.8);
+    --menu-logo: #6B5CFF;
+    --menu-link: #A9AEDC;
+    --menu-link-hover: #FFFFFF;
+    --menu-link-active: #6B5CFF;
+    --menu-divider: #1C2140;
+
+    /* Home Section Colors */
+    --home-bg: #0A0D16;
+    --home-avatar-bg: #2B2163;
+    --home-title: #FFFFFF;
+    --home-subtitle: #9FA5D8;
+    --home-highlight: #6B5CFF;
+    --home-icons: #6B5CFF;
+    --home-icons-muted: #3A3F6B;
+
+    /* About Section Colors */
+    --about-bg: #0C1020;
+    --about-card-bg: #11162B;
+    --about-title: #FFFFFF;
+    --about-text: #A9AEDC;
+    --about-muted-text: #7C82B8;
+    --about-avatar-border: #6B5CFF;
+
+    /* Portfolio Section Colors */
+    --portfolio-bg: #0A0D16;
+    --portfolio-project-card: #11162B;
+    --portfolio-project-card-hover: #151B36;
+    --portfolio-project-title: #FFFFFF;
+    --portfolio-project-description: #9FA5D8;
+    --portfolio-tag-bg: #1E2450;
+    --portfolio-tag-text: #6B5CFF;
+    --portfolio-button-bg: #6B5CFF;
+    --portfolio-button-text: #FFFFFF;
+
+    /* Skills Section Colors */
+    --skills-bg: #0C1020;
+    --skills-title: #FFFFFF;
+    --skills-icon-primary: #6B5CFF;
+    --skills-icon-secondary: #8F95FF;
+    --skills-icon-muted: #3A3F6B;
+    --skills-divider: #1C2140;
+
+    /* Career Section Colors */
+    --career-bg: #0A0D16;
+    --career-timeline-line: #1C2140;
+    --career-timeline-dot: #6B5CFF;
+    --career-card-bg: #11162B;
+    --career-card-title: #FFFFFF;
+    --career-card-text: #A9AEDC;
+    --career-date-text: #7C82B8;
+
+    /* Recommendations Section Colors */
+    --recommendations-bg: #0C1020;
+    --recommendations-card-bg: #11162B;
+    --recommendations-card-highlight: #151B36;
+    --recommendations-author-name: #FFFFFF;
+    --recommendations-author-role: #9FA5D8;
+    --recommendations-text: #A9AEDC;
+    --recommendations-quote-icon: #6B5CFF;
+
+    /* Contact Section Colors */
+    --contact-bg: #0A0D16;
+    --contact-title: #FFFFFF;
+    --contact-input-bg: #11162B;
+    --contact-input-border: #1C2140;
+    --contact-input-focus: #6B5CFF;
+    --contact-input-text: #FFFFFF;
+    --contact-placeholder: #7C82B8;
+    --contact-button-bg: #6B5CFF;
+    --contact-button-hover: #7A6CFF;
+    --contact-button-text: #FFFFFF;
+
+    /* Footer Colors */
+    --footer-bg: #090B14;
+    --footer-text: #7C82B8;
+    --footer-icon: #6B5CFF;
+    --footer-icon-hover: #FFFFFF;
+
+    /* Typography */
+    --font-family-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-family-secondary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Font Sizes */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 20px rgba(107, 92, 255, 0.3);
+
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+
+    /* Z-Index */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+    --z-toast: 1080;
+
+    /* Container Max Widths */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1536px;
+}

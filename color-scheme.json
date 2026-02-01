@@ -1,0 +1,104 @@
+{
+  "pageBackground": {
+    "primary": "#0A0D16",
+    "secondary": "#0C1020",
+    "tertiary": "#090B14",
+    "sectionAlt": "#0E1326",
+    "overlay": "#00000080",
+    "gradient": {
+      "start": "#0A0D16",
+      "middle": "#0C1020",
+      "end": "#090B14"
+    }
+  },
+
+  "menu": {
+    "background": "#0A0D16",
+    "backgroundBlur": "#0A0D16CC",
+    "logo": "#6B5CFF",
+    "link": "#A9AEDC",
+    "linkHover": "#FFFFFF",
+    "linkActive": "#6B5CFF",
+    "divider": "#1C2140"
+  },
+
+  "home": {
+    "background": "#0A0D16",
+    "avatarBackground": "#2B2163",
+    "title": "#FFFFFF",
+    "subtitle": "#9FA5D8",
+    "highlight": "#6B5CFF",
+    "icons": "#6B5CFF",
+    "iconsMuted": "#3A3F6B"
+  },
+
+  "sobreMim": {
+    "background": "#0C1020",
+    "cardBackground": "#11162B",
+    "title": "#FFFFFF",
+    "text": "#A9AEDC",
+    "mutedText": "#7C82B8",
+    "avatarBorder": "#6B5CFF"
+  },
+
+  "portfolio": {
+    "background": "#0A0D16",
+    "projectCard": "#11162B",
+    "projectCardHover": "#151B36",
+    "projectTitle": "#FFFFFF",
+    "projectDescription": "#9FA5D8",
+    "tagBackground": "#1E2450",
+    "tagText": "#6B5CFF",
+    "buttonBackground": "#6B5CFF",
+    "buttonText": "#FFFFFF"
+  },
+
+  "skills": {
+    "background": "#0C1020",
+    "title": "#FFFFFF",
+    "iconPrimary": "#6B5CFF",
+    "iconSecondary": "#8F95FF",
+    "iconMuted": "#3A3F6B",
+    "divider": "#1C2140"
+  },
+
+  "carreira": {
+    "background": "#0A0D16",
+    "timelineLine": "#1C2140",
+    "timelineDot": "#6B5CFF",
+    "cardBackground": "#11162B",
+    "cardTitle": "#FFFFFF",
+    "cardText": "#A9AEDC",
+    "dateText": "#7C82B8"
+  },
+
+  "recomendacoes": {
+    "background": "#0C1020",
+    "cardBackground": "#11162B",
+    "cardHighlight": "#151B36",
+    "authorName": "#FFFFFF",
+    "authorRole": "#9FA5D8",
+    "text": "#A9AEDC",
+    "quoteIcon": "#6B5CFF"
+  },
+
+  "contato": {
+    "background": "#0A0D16",
+    "title": "#FFFFFF",
+    "inputBackground": "#11162B",
+    "inputBorder": "#1C2140",
+    "inputFocus": "#6B5CFF",
+    "inputText": "#FFFFFF",
+    "placeholder": "#7C82B8",
+    "buttonBackground": "#6B5CFF",
+    "buttonHover": "#7A6CFF",
+    "buttonText": "#FFFFFF"
+  },
+
+  "footer": {
+    "background": "#090B14",
+    "text": "#7C82B8",
+    "icon": "#6B5CFF",
+    "iconHover": "#FFFFFF"
+  }
+}

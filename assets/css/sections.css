@@ -1,0 +1,65 @@
+/* Section-Specific Styles */
+
+/* Main Content - Account for fixed header */
+.site-main {
+    padding-top: 120px;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    background-color: var(--home-bg);
+    /* Additional styles will be added here */
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--about-bg);
+    padding: var(--spacing-4xl) 0;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    background-color: var(--portfolio-bg);
+    padding: var(--spacing-4xl) 0;
+}
+
+/* Skills Section */
+.skills-section {
+    background-color: var(--skills-bg);
+    padding: var(--spacing-4xl) 0;
+}
+
+/* Career Section */
+.career-section {
+    background-color: var(--career-bg);
+    padding: var(--spacing-4xl) 0;
+}
+
+/* Recommendations Section */
+.recommendations-section {
+    background-color: var(--recommendations-bg);
+    padding: var(--spacing-4xl) 0;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--contact-bg);
+    padding: var(--spacing-4xl) 0;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--footer-bg);
+    padding: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+
+/* Navigation */
+.site-header {
+    background-color: var(--menu-bg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-fixed);
+}

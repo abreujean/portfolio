@@ -1,0 +1,30 @@
+{
+  "id": "wordpress-theme-structure-02",
+  "seq": "02",
+  "title": "Setup theme configuration and includes (inc/ directory)",
+  "status": "in_progress",
+  "agent_id": "coder-agent",
+  "started_at": "2026-02-01T00:00:00Z",
+  "depends_on": ["01"],
+  "parallel": false,
+  "suggested_agent": "CoderAgent",
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md",
+    ".opencode/context/core/standards/security-patterns.md",
+    ".tmp/external-context/wordpress/php-coding-standards.md",
+    ".tmp/external-context/wordpress/enqueue-scripts-styles.md"
+  ],
+  "reference_files": [
+    "color-scheme.json"
+  ],
+  "acceptance_criteria": [
+    "inc/theme-setup.php created with WordPress theme configuration",
+    "inc/enqueue.php created with proper asset enqueueing",
+    "Menu registration implemented",
+    "Theme support features configured"
+  ],
+  "deliverables": [
+    "inc/theme-setup.php",
+    "inc/enqueue.php"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "wordpress-theme-structure-04",
+  "seq": "04",
+  "title": "Create navigation template",
+  "status": "in_progress",
+  "agent_id": "coder-agent",
+  "started_at": "2026-02-01T00:00:00Z",
+  "depends_on": ["03"],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md",
+    ".tmp/external-context/wordpress/html-coding-standards.md",
+    ".opencode/context/ui/web/ui-styling-standards.md"
+  ],
+  "reference_files": [],
+  "acceptance_criteria": [
+    "templates/navigation.php created with responsive menu structure",
+    "Logo area included",
+    "wp_nav_menu implemented",
+    "Mobile menu button added",
+    "ARIA labels for accessibility"
+  ],
+  "deliverables": [
+    "templates/navigation.php"
+  ]
+}

@@ -1,0 +1,7 @@
+# This file ensures the components directory is tracked by git
+# Place component-specific JavaScript files in this directory
+# Examples:
+# - navigation.js - Mobile menu functionality
+# - portfolio.js - Portfolio filtering and interactions
+# - contact.js - Contact form validation and submission
+# - hero.js - Hero section animations

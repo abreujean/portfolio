@@ -1,0 +1,7 @@
+# This file ensures the images directory is tracked by git
+# Place your theme images in this directory
+# Recommended:
+# - hero/ - Background images for hero section
+# - portfolio/ - Project thumbnails and screenshots
+# - about/ - Profile pictures and about section images
+# - icons/ - Custom icons and small graphics

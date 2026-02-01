@@ -1,0 +1,30 @@
+{
+  "id": "wordpress-theme-structure-05",
+  "seq": "05",
+  "title": "Create section templates (hero, about, portfolio)",
+  "status": "in_progress",
+  "agent_id": "coder-agent",
+  "started_at": "2026-01-28T00:00:00Z",
+  "depends_on": ["03"],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [
+    ".opencode/context/core/standards/code-quality.md",
+    ".tmp/external-context/wordpress/html-coding-standards.md",
+    ".tmp/external-context/wordpress/template-hierarchy.md"
+  ],
+  "reference_files": [
+    "color-scheme.json"
+  ],
+  "acceptance_criteria": [
+    "templates/hero.php created with semantic HTML5 structure",
+    "templates/about.php created with section container and comments",
+    "templates/portfolio.php created with proper ID and classes",
+    "All templates include placeholder comments for content"
+  ],
+  "deliverables": [
+    "templates/hero.php",
+    "templates/about.php",
+    "templates/portfolio.php"
+  ]
+}
