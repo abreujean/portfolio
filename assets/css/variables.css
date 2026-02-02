@@ -15,11 +15,12 @@
     /* Menu Colors */
     --menu-bg: rgba(123, 74, 226, 0.15);
     --menu-bg-blur: rgba(10, 13, 22, 0.8);
-    --menu-logo: #6B5CFF;
+    --menu-logo: #7b4ae2;
     --menu-link: #A9AEDC;
     --menu-link-hover: #FFFFFF;
     --menu-link-active: #6B5CFF;
     --menu-divider: #1C2140;
+    --menu-status-available: #4ae290;
 
     /* Home Section Colors */
     --home-bg: #0A0D16;
@@ -155,4 +156,11 @@
     --container-lg: 1024px;
     --container-xl: 1280px;
     --container-2xl: 1536px;
+
+    /* img sizes */
+    --img-xs: 16px;
+    --img-sm: 24px;
+    --img-md: 32px;
+    --img-lg: 48px;
+    --img-xl: 64px;
 }

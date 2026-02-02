@@ -29,6 +29,7 @@
             
             // Initialize components
             this.initNavigation();
+            this.initLanguageSwitcher();
             this.initScrollEffects();
             this.initAnimations();
             this.initContactForm();
@@ -116,6 +117,50 @@
                         this.smoothScrollTo(targetElement);
                         toggleMenu(false);
                     }
+                });
+            });
+        },
+
+        // Language Switcher functionality
+        initLanguageSwitcher: function() {
+            const langButtons = document.querySelectorAll('.lang');
+            
+            if (langButtons.length === 0) return;
+
+            // Get saved language from localStorage
+            const savedLang = localStorage.getItem('portfolio-lang') || 'pt';
+
+            // Set active class based on saved language
+            langButtons.forEach(button => {
+                const lang = button.dataset.lang;
+                if (lang === savedLang) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+
+            // Add click event listeners
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedLang = button.dataset.lang;
+                    
+                    // Update active class on all buttons
+                    langButtons.forEach(btn => {
+                        if (btn.dataset.lang === selectedLang) {
+                            btn.classList.add('active');
+                        } else {
+                            btn.classList.remove('active');
+                        }
+                    });
+                    
+                    // Save selected language to localStorage
+                    localStorage.setItem('portfolio-lang', selectedLang);
+                    
+                    // Dispatch custom event for other scripts to listen
+                    document.dispatchEvent(new CustomEvent('portfolio-lang-change', {
+                        detail: { lang: selectedLang }
+                    }));
                 });
             });
         },
@@ -372,6 +417,17 @@
                     setTimeout(() => inThrottle = false, limit);
                 }
             };
+        },
+
+        // Utility: Get current language
+        getCurrentLanguage: function() {
+            return localStorage.getItem('portfolio-lang') || 'pt';
+        },
+
+        // Utility: Set language
+        setLanguage: function(lang) {
+            localStorage.setItem('portfolio-lang', lang);
+            return lang;
         }
     };
 

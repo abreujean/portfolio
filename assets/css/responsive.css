@@ -5,6 +5,16 @@
 
 /* Mobile Navigation Styles (< 768px) */
 @media (max-width: 47.9rem) {
+    /* Hide desktop wrapper on mobile */
+    .nav-desktop-wrapper {
+        display: none;
+    }
+
+    /* Show mobile wrapper on mobile */
+    .nav-mobile-wrapper {
+        display: flex;
+    }
+
     /* Nav wrapper adjustments for mobile */
     .nav-wrapper {
         padding: var(--spacing-md) var(--spacing-sm);
@@ -16,6 +26,38 @@
         height: auto;
         min-height: 56px;
     }
+
+    /* Primary Menu Drawer - Fixed position off-screen by default */
+    .primary-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--menu-bg);
+        transform: translateX(-100%);
+        transition: transform var(--transition-normal) ease-out;
+        z-index: var(--z-modal-backdrop);
+        overflow-y: auto;
+        padding-top: 80px;
+        padding-bottom: var(--spacing-2xl);
+    }
+
+    /* Primary menu open state */
+    .primary-menu.active {
+        transform: translateX(0);
+    }
+
+    /* Primary Menu List */
+    .primary-menu-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+        margin: 0;
+        padding: var(--spacing-lg);
+    }
+}
 
     /* Hide desktop menu items on mobile */
     .nav-links {
@@ -78,12 +120,9 @@
         justify-content: space-between;
     }
 
-    /* Nav links mobile dropdown */
+    /* Nav links mobile dropdown - O menu fica dentro do drawer, não precisa de display:none aqui */
+    /* O drawer .primary-menu controla a visibilidade */
     .primary-menu-list {
-        display: none;
-    }
-
-    .primary-menu-list.active {
         display: flex;
         flex-direction: column;
     }
@@ -107,19 +146,29 @@
     .container {
         max-width: var(--container-md);
     }
-    
+
+    /* Show desktop wrapper on tablet+ */
+    .nav-desktop-wrapper {
+        display: flex;
+    }
+
+    /* Hide mobile wrapper on tablet+ */
+    .nav-mobile-wrapper {
+        display: none;
+    }
+
     .section-header {
         margin-bottom: var(--spacing-4xl);
     }
-    
+
     .section-title {
         font-size: var(--text-5xl);
     }
-    
+
     /* ============================================================
        NAVIGATION RESPONSIVE - TABLET (768px+)
        ============================================================ */
-    
+
     /* Nav wrapper adjustments */
     .nav-wrapper {
         padding: var(--spacing-lg) var(--spacing-md);
@@ -127,7 +176,7 @@
 
     /* Nav container tablet */
     .nav {
-        height: 64px;
+        height: 54px;
         padding: 0 var(--spacing-xl);
     }
     
