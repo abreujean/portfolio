@@ -58,6 +58,7 @@
     align-items: center;
     min-width: max-content;
     z-index: var(--z-sticky);
+    cursor: pointer;
 }
 
 .logo-container {
@@ -207,8 +208,6 @@
 
 .lang.active {
     color: var(--menu-logo);
-    border-color: rgba(107, 92, 255, 0.3);
-    background: rgba(107, 92, 255, 0.1);
 }
 
 .lang.active img {
@@ -286,7 +285,7 @@
 /* Mobile Menu Overlay/Drawer */
 .menu-overlay {
     position: fixed;
-    top: 78px;
+    top: 71px;
     left: 0;
     width: 100%;
     height: 100vh;

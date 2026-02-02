@@ -1,14 +1,14 @@
 /* Section-Specific Styles */
 
-/* Main Content - Account for fixed header */
-.site-main {
-    padding-top: 120px;
+#main-content{
+    background-color: var(--home-bg);
 }
 
 /* Hero Section */
-.hero-section {
+#hero {
     min-height: 100vh;
     background-color: var(--home-bg);
+    color: aliceblue;
     /* Additional styles will be added here */
 }
 

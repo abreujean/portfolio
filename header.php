@@ -30,9 +30,6 @@
     </a>
 
     <!-- Header with Navigation -->
-    <header id="site-header" class="site-header" role="banner">
-        <?php get_template_part('templates/navigation'); ?>
-    </header>
-
-    <!-- Main Content Area -->
-    <main id="main-content" class="site-main" role="main">
+ 
+    <?php get_template_part('templates/navigation'); ?>
+    

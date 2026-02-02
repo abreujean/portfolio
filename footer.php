@@ -1,5 +1,3 @@
-    </main><!-- #main-content -->
-
     <!-- Footer Section -->
     <footer id="site-footer" class="site-footer" role="contentinfo">
         <div class="footer-container">
