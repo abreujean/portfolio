@@ -1,0 +1,90 @@
+/* ============================================================
+   RECOMMENDATIONS SECTION
+   Recommendations/Testimonials section styles with responsive design
+   ============================================================ */
+
+.recommendations-section {
+    background-color: var(--recommendations-bg);
+    padding: var(--spacing-4xl) 0;
+}
+
+/* Recommendations Grid */
+.recommendations-grid {
+    display: grid;
+    gap: var(--spacing-2xl);
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.recommendation-card {
+    background-color: var(--recommendations-card-bg);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.recommendation-card:hover {
+    background-color: var(--recommendations-card-highlight);
+    transform: translateY(-4px);
+}
+
+.recommendation-quote {
+    position: absolute;
+    top: var(--spacing-lg);
+    left: var(--spacing-lg);
+    font-size: 48px;
+    color: var(--recommendations-quote-icon);
+    opacity: 0.3;
+    line-height: 1;
+}
+
+.recommendation-text {
+    color: var(--recommendations-text);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+}
+
+.recommendation-author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.recommendation-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.recommendation-info {
+    flex: 1;
+}
+
+.recommendation-name {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--recommendations-author-name);
+    margin-bottom: 2px;
+}
+
+.recommendation-role {
+    font-size: var(--text-sm);
+    color: var(--recommendations-author-role);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .recommendations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .recommendations-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

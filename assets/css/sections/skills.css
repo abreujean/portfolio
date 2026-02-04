@@ -1,0 +1,83 @@
+/* ============================================================
+   SKILLS SECTION
+   Skills section styles with responsive design
+   ============================================================ */
+
+.skills-section {
+    background-color: var(--skills-bg);
+    padding: var(--spacing-4xl) 0;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    gap: var(--spacing-xl);
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.skill-item {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background-color: var(--about-card-bg);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.skill-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.skill-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--spacing-md);
+    color: var(--skills-icon-primary);
+}
+
+.skill-name {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--skills-title);
+    margin-bottom: var(--spacing-sm);
+}
+
+.skill-level {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.skill-level-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--skills-icon-muted);
+}
+
+.skill-level-dot.active {
+    background-color: var(--skills-icon-primary);
+}
+
+/* Skills Divider */
+.skills-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--skills-divider);
+    margin: var(--spacing-2xl) 0;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

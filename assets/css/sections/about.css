@@ -1,0 +1,58 @@
+/* ============================================================
+   ABOUT SECTION
+   About section styles with responsive design
+   ============================================================ */
+
+.about-section {
+    background-color: var(--about-bg);
+    padding: var(--spacing-4xl) 0;
+}
+
+/* About Content */
+.about-content {
+    max-width: var(--container-lg);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.about-grid {
+    display: grid;
+    gap: var(--spacing-2xl);
+    align-items: center;
+}
+
+.about-text {
+    color: var(--about-text);
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: var(--spacing-md);
+}
+
+.about-avatar {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: var(--radius-2xl);
+    border: 4px solid var(--about-avatar-border);
+    overflow: hidden;
+}
+
+.about-avatar img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-4xl);
+    }
+
+    .about-avatar {
+        margin: 0;
+    }
+}

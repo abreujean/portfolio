@@ -1,0 +1,173 @@
+/* ============================================================
+   TYPOGRAPHY
+   Global typography styles
+   ============================================================ */
+
+/* Font Families */
+:root {
+    --font-family-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-family-secondary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Base Typography */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-secondary);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+h1 {
+    font-size: var(--text-6xl);
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: var(--text-5xl);
+    letter-spacing: -0.5px;
+}
+
+h3 {
+    font-size: var(--text-4xl);
+}
+
+h4 {
+    font-size: var(--text-3xl);
+}
+
+h5 {
+    font-size: var(--text-2xl);
+}
+
+h6 {
+    font-size: var(--text-xl);
+}
+
+/* Paragraphs */
+p {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Links */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--menu-link-hover);
+}
+
+a:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Lists */
+ul, ol {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+}
+
+li {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Code */
+code, pre {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+    font-size: 0.9em;
+}
+
+code {
+    background: rgba(107, 92, 255, 0.1);
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+pre {
+    background: var(--about-card-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    line-height: 1.5;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: var(--spacing-lg) 0;
+    padding-left: var(--spacing-lg);
+    border-left: 4px solid var(--accent);
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Strong and Emphasis */
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+/* Small text */
+small {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+/* Mark */
+mark {
+    background: rgba(107, 92, 255, 0.2);
+    color: var(--accent);
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+/* Abbreviations */
+abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: var(--text-4xl);
+    }
+
+    h2 {
+        font-size: var(--text-3xl);
+    }
+
+    h3 {
+        font-size: var(--text-2xl);
+    }
+}

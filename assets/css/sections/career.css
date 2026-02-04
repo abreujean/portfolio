@@ -1,0 +1,119 @@
+/* ============================================================
+   CAREER SECTION
+   Career/Timeline section styles with responsive design
+   ============================================================ */
+
+.career-section {
+    background-color: var(--career-bg);
+    padding: var(--spacing-4xl) 0;
+}
+
+/* Career Timeline */
+.career-timeline {
+    max-width: var(--container-lg);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    position: relative;
+}
+
+.career-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--career-timeline-line);
+}
+
+.career-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.career-item:last-child {
+    margin-bottom: 0;
+}
+
+.career-dot {
+    position: absolute;
+    left: 11px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--career-timeline-dot);
+    border: 4px solid var(--career-bg);
+    box-shadow: 0 0 0 2px var(--career-timeline-dot);
+}
+
+.career-card {
+    background-color: var(--career-card-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    transition: all var(--transition-normal);
+}
+
+.career-card:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+}
+
+.career-date {
+    font-size: var(--text-sm);
+    color: var(--career-date-text);
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+}
+
+.career-title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--career-card-title);
+    margin-bottom: var(--spacing-xs);
+}
+
+.career-company {
+    font-size: var(--text-base);
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.career-description {
+    color: var(--career-card-text);
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .career-timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .career-item {
+        padding-left: 0;
+        width: 50%;
+    }
+
+    .career-item:nth-child(odd) {
+        padding-right: 60px;
+        text-align: right;
+    }
+
+    .career-item:nth-child(even) {
+        padding-left: 60px;
+        margin-left: 50%;
+    }
+
+    .career-item:nth-child(odd) .career-dot {
+        left: auto;
+        right: -10px;
+    }
+
+    .career-item:nth-child(even) .career-dot {
+        left: -10px;
+    }
+}
