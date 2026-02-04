@@ -164,6 +164,7 @@
     --container-lg: 1024px;
     --container-xl: 1280px;
     --container-2xl: 1536px;
+    --container-3xl: 1600px;
 
     /* img sizes */
     --img-xs: 16px;

@@ -10,3 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: portfolio, dark-mode, responsive, modern
 Text Domain: portfolio
 */
+
+.site-main{
+    margin: 100px auto 0 auto;
+    max-width: 1640px;
+    width: 90%;
+}

@@ -23,6 +23,18 @@
     display: flex;
     gap: 14px;
     margin-bottom: 22px;
+    justify-content: center;
+}
+
+/* Mobile variant - visible only on mobile */
+.hero-socials--mobile {
+    display: flex;
+}
+
+/* Desktop variant - visible only on desktop/tablet */
+.hero-socials--desktop {
+    display: none;
+    margin-bottom: 0;
 }
 
 .hero-socials a {
@@ -74,19 +86,70 @@
     font-size: 16px;
 }
 
+/* Hero Language Switcher - Mobile Only */
+.nav-lang-hero {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    margin-bottom: 18px;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-lang-hero .lang {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: none;
+    color: var(--text-muted);
+    font-size: var(--text-md);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 8px 14px;
+    transition: all var(--transition-fast);
+}
+
+.nav-lang-hero .lang:hover {
+    color: var(--accent);
+}
+
+.nav-lang-hero .lang.active {
+    color: var(--accent);
+}
+
+.nav-lang-hero .lang img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+}
+
+.nav-lang-hero .lang:hover img,
+.nav-lang-hero .lang.active img {
+    opacity: 1;
+}
+
 /* Status */
 .hero-status {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     padding: 6px 14px;
     background: rgba(60,255,143,0.15);
     color: var(--success);
-    border-radius: 999px;
+    border-radius: 12px;
     font-size: 14px;
     font-weight: 500;
-    margin-bottom: 26px;
+    margin: 0 auto 26px auto;
+    width: 90px;
 }
+
 
 .hero-status .status-dot {
     width: 8px;
@@ -96,15 +159,47 @@
     box-shadow: 0 0 10px rgba(60,255,143,0.9);
 }
 
+/* Hero Image Container */
+.hero-image-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Hero Image */
+.hero-image {
+    width: 90%;
+    transition: 0.6s ease-in-out;
+    height: 500px;
+    margin-top: 40px;
+    margin-left: 5%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    animation: fadeInImage 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Greeting */
 .hero-greeting {
-    display: inline-block;
+    display: flex;
     padding: 6px 14px;
     border-radius: 999px;
     background: var(--accent-soft);
     color: var(--accent);
     font-size: 14px;
     margin-bottom: 20px;
+    width: fit-content;
 }
 
 /* Title */
@@ -146,20 +241,33 @@
 }
 
 .btn-chat {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 12px 22px;
     border-radius: 999px;
     border: 1px solid var(--accent);
     background: transparent;
     color: var(--accent);
     font-size: 14px;
-    cursor: pointer;
+    text-decoration: none;
     transition: all var(--transition-normal);
     font-family: inherit;
+}
+
+.btn-chat img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
 .btn-chat:hover {
     background: var(--accent);
     color: #fff;
+}
+
+.btn-chat:hover img {
+    filter: brightness(0) invert(1);
 }
 
 /* ============================================================
@@ -168,6 +276,15 @@
 
 /* Tablet (768px - 1024px) */
 @media (min-width: 768px) {
+    /* Hide mobile variant on tablet/desktop */
+    .hero-socials--mobile {
+        display: none;
+    }
+
+    /* Show desktop variant on tablet/desktop */
+    .hero-socials--desktop {
+        display: flex;
+    }
     .hero {
         padding: 60px 40px;
     }
@@ -182,8 +299,17 @@
 
     /* Hide lang and status on tablet/desktop (they appear in the menu) */
     .hero-lang,
-    .hero-status {
+    .hero-status,
+    .nav-lang-hero {
         display: none;
+    }
+
+    /* Hero Image - Tablet */
+    .hero-image {
+        width: 60%;
+        height: 450px;
+        margin-top: 40px;
+        margin-left: 20%;
     }
 }
 
@@ -209,6 +335,14 @@
         padding: 14px 26px;
         font-size: 15px;
     }
+
+    /* Hero Image - Desktop */
+    .hero-image {
+        width: 50%;
+        height: 500px;
+        margin-top: 40px;
+        margin-left: 25%;
+    }
 }
 
 /* Small mobile adjustments */
@@ -233,5 +367,12 @@
 
     .btn-chat {
         width: 100%;
+    }
+
+    .hero-image {
+        width: 95%;
+        height: 400px;
+        margin-top: 30px;
+        margin-left: 2.5%;
     }
 }

@@ -16,36 +16,12 @@ $current_lang = portfolio_get_current_lang();
 ?>
 
 <section class="hero-section">
-    <!-- Social icons -->
-    <?php if ($hero_data['show_socials']) : ?>
-    <div class="hero-socials">
-        <?php if (!empty($hero_data['linkedin_url'])) : ?>
-        <a href="<?php echo esc_url($hero_data['linkedin_url']); ?>" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
-        <?php endif; ?>
-        <?php if (!empty($hero_data['github_url'])) : ?>
-        <a href="<?php echo esc_url($hero_data['github_url']); ?>" aria-label="GitHub" target="_blank" rel="noopener noreferrer">gh</a>
-        <?php endif; ?>
-        <?php if (!empty($hero_data['dribbble_url'])) : ?>
-        <a href="<?php echo esc_url($hero_data['dribbble_url']); ?>" aria-label="Dribbble" target="_blank" rel="noopener noreferrer">dr</a>
-        <?php endif; ?>
-        <?php if (!empty($hero_data['behance_url'])) : ?>
-        <a href="<?php echo esc_url($hero_data['behance_url']); ?>" aria-label="Behance" target="_blank" rel="noopener noreferrer">be</a>
-        <?php endif; ?>
-    </div>
-    <?php endif; ?>
+    <!-- Social icons (mobile) -->
+    <?php get_template_part('templates/components/hero-socials', null, ['variant' => 'mobile']); ?>
 
     <!-- Language (visible on mobile only) -->
     <?php if ($hero_data['show_lang']) : ?>
-    <div class="hero-lang">
-        <?php foreach ($languages as $lang) : ?>
-            <button class="lang <?php echo ($current_lang === $lang['code']) ? 'active' : ''; ?>" data-lang="<?php echo esc_attr($lang['code']); ?>">
-                <?php echo esc_html($lang['label']); ?>
-            </button>
-            <?php if ($lang !== end($languages)) : ?>
-                <span class="flag"><?php echo esc_html($lang['flag']); ?></span>
-            <?php endif; ?>
-        <?php endforeach; ?>
-    </div>
+    <?php get_template_part('templates/components/nav-lang', null, ['variant' => 'hero']); ?>
     <?php endif; ?>
 
     <!-- Status (visible on mobile only) -->
@@ -56,9 +32,22 @@ $current_lang = portfolio_get_current_lang();
     </div>
     <?php endif; ?>
 
+    <!-- Hero Image -->
+    <?php if (!empty($hero_data['hero_image'])) : ?>
+    <div class="hero-image-container">
+        <img 
+            src="<?php echo esc_url($hero_data['hero_image']); ?>" 
+            alt="Hero Image" 
+            class="hero-image"
+        >
+    </div>
+    <?php endif; ?>
+
     <!-- Greeting -->
     <?php if ($hero_data['show_greeting']) : ?>
-    <span class="hero-greeting"><?php echo esc_html($hero_data['greeting_text']); ?></span>
+    <div class="hero-greeting">
+        <span class="greeting"><?php echo esc_html($hero_data['greeting_text']); ?></span>
+    </div>
     <?php endif; ?>
 
     <!-- Name -->
@@ -79,8 +68,15 @@ $current_lang = portfolio_get_current_lang();
             <?php echo esc_html($hero_data['cv_text']); ?>
         </a>
         <?php endif; ?>
-        <?php if ($hero_data['show_chat_button']) : ?>
-        <button class="btn-chat"><?php echo esc_html($hero_data['chat_button_text']); ?></button>
+        <?php if ($hero_data['show_chat_button'] && !empty($hero_data['whatsapp_url'])) : ?>
+        <a href="<?php echo esc_url($hero_data['whatsapp_url']); ?>" class="btn-chat" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr($hero_data['chat_button_text']); ?>">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/whatsapp.svg');?>" alt="WhatsApp">
+            <span><?php echo esc_html($hero_data['chat_button_text']); ?></span>
+        </a>
         <?php endif; ?>
     </div>
+
+    <!-- Social icons (desktop) -->
+    <?php get_template_part('templates/components/hero-socials', null, ['variant' => 'desktop']); ?>
+
 </section>

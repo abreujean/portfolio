@@ -29,7 +29,7 @@ function portfolio_hero_customizer($wp_customize) {
 
     // First Name
     $wp_customize->add_setting('hero_first_name', array(
-        'default'           => 'Henrique',
+        'default'           => 'Jean',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -43,7 +43,7 @@ function portfolio_hero_customizer($wp_customize) {
 
     // Last Name
     $wp_customize->add_setting('hero_last_name', array(
-        'default'           => 'Sousa',
+        'default'           => 'Abreu',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -57,7 +57,7 @@ function portfolio_hero_customizer($wp_customize) {
 
     // Role Text
     $wp_customize->add_setting('hero_role_text', array(
-        'default'           => 'Front-end developer · UI designer',
+        'default'           => 'FullStack developer · UI designer',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -96,6 +96,20 @@ function portfolio_hero_customizer($wp_customize) {
         'section'     => 'hero_content',
         'type'        => 'text',
     ));
+
+    // Hero Image
+    $wp_customize->add_setting('hero_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_image', array(
+        'label'       => __('Hero Image', 'portfolio'),
+        'description' => __('Upload an image to display in the hero section (recommended size: 1200x800px)', 'portfolio'),
+        'section'     => 'hero_content',
+        'settings'    => 'hero_image',
+    )));
 
     // Social Links Section
     $wp_customize->add_section('hero_socials', array(
@@ -190,15 +204,30 @@ function portfolio_hero_customizer($wp_customize) {
         'type'        => 'text',
     ));
 
+    // WhatsApp URL
+    $wp_customize->add_setting('hero_whatsapp_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('hero_whatsapp_url', array(
+        'label'       => __('WhatsApp URL', 'portfolio'),
+        'description' => __('Your WhatsApp link (e.g., https://wa.me/5511999999999)', 'portfolio'),
+        'section'     => 'hero_actions',
+        'type'        => 'url',
+    ));
+
     // Chat Button Text
     $wp_customize->add_setting('hero_chat_button_text', array(
-        'default'           => '💬 Vamos conversar!',
+        'default'           => 'Vamos conversar!',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
 
     $wp_customize->add_control('hero_chat_button_text', array(
         'label'       => __('Chat Button Text', 'portfolio'),
+        'description' => __('Text to display next to WhatsApp icon', 'portfolio'),
         'section'     => 'hero_actions',
         'type'        => 'text',
     ));
