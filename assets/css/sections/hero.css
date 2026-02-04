@@ -6,6 +6,7 @@
 .hero-section {
     background-color: var(--home-bg);
     color: aliceblue;
+    margin-bottom: 50px;
 }
 
 /* Hero Container */
@@ -169,14 +170,13 @@
 .hero-image-container {
     width: 100%;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 
 /* Hero Image */
 .hero-image {
-    width: 90%;
     transition: 0.6s ease-in-out;
-    height: 500px;
-    margin-left: 5%;
+    height: 100%;
     object-fit: cover;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
@@ -224,23 +224,22 @@
 .hero-role {
     color: var(--text-secondary);
     font-size: 16px;
-    margin-bottom: 20px;
 }
 
 /* Actions container (left column in desktop) */
 .hero-actions {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 /* Buttons container */
 .hero-actions-buttons {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     flex-direction: column;
     gap: 5px;
     justify-content: center;
+    height: 100%
 }
 
 .link-cv {
@@ -319,20 +318,28 @@
     /* Tablet layout - simpler, still uses 3-column but more compact */
     .hero-content {
         display: flex;
-        justify-content: space-between;
+        justify-content:center;
+        flex-direction: row;
         align-items: center;
-        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .hero-content .hero-container {
+        width: 600px;
+        max-width: 400px;
+        height: 400px;
+        justify-content: center;
     }
 
     .hero-actions {
-        flex: 1;
+        flex: 0 0 auto;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
 
     .hero-center {
-        flex: 1;
+        flex: 0 0 auto;
         display: flex;
         justify-content: center;
     }
@@ -353,7 +360,6 @@
 
     .hero-role {
         font-size: 18px;
-        margin-bottom: 30px;
     }
 
     /* Hide lang and status on tablet/desktop (they appear in the menu) */
@@ -365,9 +371,6 @@
 
     /* Hero Image - Tablet */
     .hero-image {
-        width: 100%;
-        max-width: 350px;
-        height: 450px;
         margin: 0;
     }
 
@@ -440,7 +443,6 @@
 
     .hero-role {
         font-size: 18px;
-        margin-bottom: 30px;
     }
 
     .hero-actions {
@@ -454,10 +456,6 @@
 
     /* Hero Image - Desktop */
     .hero-image {
-        width: 100%;
-        height: 100%;
-        max-height: 500px;
-        margin: 0;
         object-position: center;
     }
 
@@ -491,13 +489,7 @@
         gap: 16px;
     }
 
-    .btn-chat {
-        width: 100%;
-    }
-
     .hero-image {
-        width: 95%;
-        height: 400px;
         margin-top: 30px;
         margin-left: 2.5%;
     }
