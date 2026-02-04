@@ -4,7 +4,6 @@
    ============================================================ */
 
 .hero-section {
-    min-height: 100vh;
     background-color: var(--home-bg);
     color: aliceblue;
 }
@@ -22,7 +21,7 @@
 .hero-socials {
     display: flex;
     gap: 14px;
-    margin-bottom: 22px;
+    margin-bottom: 5px;
     justify-content: center;
 }
 
@@ -91,7 +90,7 @@
     display: flex;
     align-items: center;
     gap: 0px;
-    margin-bottom: 18px;
+    margin-bottom: 8px;
     justify-content: center;
     width: 100%;
 }
@@ -109,7 +108,7 @@
     align-items: center;
     justify-content: center;
     gap: 2px;
-    padding: 8px 14px;
+    padding: 8px 8px;
     transition: all var(--transition-fast);
 }
 
@@ -140,7 +139,7 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 6px 14px;
+    padding: 4px 4px;
     background: rgba(60,255,143,0.15);
     color: var(--success);
     border-radius: 12px;
@@ -159,6 +158,13 @@
     box-shadow: 0 0 10px rgba(60,255,143,0.9);
 }
 
+/* Hero Content Container */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 /* Hero Image Container */
 .hero-image-container {
     width: 100%;
@@ -170,7 +176,6 @@
     width: 90%;
     transition: 0.6s ease-in-out;
     height: 500px;
-    margin-top: 40px;
     margin-left: 5%;
     object-fit: cover;
     border-radius: var(--radius-lg);
@@ -219,14 +224,23 @@
 .hero-role {
     color: var(--text-secondary);
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-/* Actions */
+/* Actions container (left column in desktop) */
 .hero-actions {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 20px;
+}
+
+/* Buttons container */
+.hero-actions-buttons {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
 }
 
 .link-cv {
@@ -234,18 +248,26 @@
     text-decoration: none;
     font-weight: 500;
     font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .link-cv:hover {
     text-decoration: underline;
 }
 
+.link-cv .download-icon {
+    width: 16px;
+    height: 16px;
+}
+
 .btn-chat {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 22px;
-    border-radius: 999px;
+    padding: 6px 10px;
+    border-radius: 10px;
     border: 1px solid var(--accent);
     background: transparent;
     color: var(--accent);
@@ -255,10 +277,10 @@
     font-family: inherit;
 }
 
-.btn-chat img {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
+.btn-chat .whatsapp-icon {
+    fill: var(--accent);
+    width: 15px;
+    height: 15px;
 }
 
 .btn-chat:hover {
@@ -268,6 +290,10 @@
 
 .btn-chat:hover img {
     filter: brightness(0) invert(1);
+}
+
+.btn-chat:hover .whatsapp-icon {
+    fill: #fff;
 }
 
 /* ============================================================
@@ -285,16 +311,49 @@
     .hero-socials--desktop {
         display: flex;
     }
+    
     .hero {
         padding: 60px 40px;
     }
 
+    /* Tablet layout - simpler, still uses 3-column but more compact */
+    .hero-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .hero-actions {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-center {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-right {
+        flex: 0 0 auto;
+    }
+
+    .hero-socials--desktop {
+        flex-direction: row;
+        gap: 14px;
+    }
+
     .hero-title {
         font-size: 56px;
+        margin-bottom: 20px;
     }
 
     .hero-role {
         font-size: 18px;
+        margin-bottom: 30px;
     }
 
     /* Hide lang and status on tablet/desktop (they appear in the menu) */
@@ -306,25 +365,82 @@
 
     /* Hero Image - Tablet */
     .hero-image {
-        width: 60%;
+        width: 100%;
+        max-width: 350px;
         height: 450px;
-        margin-top: 40px;
-        margin-left: 20%;
+        margin: 0;
+    }
+
+    .hero-image-container {
+        width: 100%;
+        max-width: 350px;
+        overflow: visible;
     }
 }
 
 /* Desktop (> 1024px) */
 @media (min-width: 1024px) {
     .hero {
-        padding: 80px 28px;
+        padding: 80px 60px;
+        max-width: 1400px;
+    }
+
+    /* Desktop 3-column layout */
+    .hero-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        flex-direction: row;
+        max-width: 85%;
+        margin: 50px auto 0 auto;
+    }
+      .hero-content .hero-container {
+        width: 500px;
+        max-width: 400px;
+        height: 400px;
+        justify-content: center;
+    }
+
+    /* Left column - Text content and actions */
+    .hero-actions {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Center column - Hero image */
+    .hero-center {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Right column - Social icons */
+    .hero-right {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .hero-socials--desktop {
+        flex-direction: row;
+        gap: 14px;
+    }
+
+    .hero-greeting {
+        margin-bottom: 20px;
     }
 
     .hero-title {
         font-size: 64px;
+        margin-bottom: 20px;
     }
 
     .hero-role {
         font-size: 18px;
+        margin-bottom: 30px;
     }
 
     .hero-actions {
@@ -332,16 +448,26 @@
     }
 
     .btn-chat {
-        padding: 14px 26px;
+        padding: 6px 10px;
         font-size: 15px;
     }
 
     /* Hero Image - Desktop */
     .hero-image {
-        width: 50%;
-        height: 500px;
-        margin-top: 40px;
-        margin-left: 25%;
+        width: 100%;
+        height: 100%;
+        max-height: 500px;
+        margin: 0;
+        object-position: center;
+    }
+
+    .hero-image-container {
+        width: 100%;
+        max-width: 400px;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
