@@ -1,72 +1,86 @@
 <?php
 /**
  * Hero section template part
- * 
+ *
  * @package Portfolio
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
+
+// Get customizer values
+$hero_data = portfolio_get_hero_data();
+$languages = portfolio_get_languages();
+$current_lang = portfolio_get_current_lang();
 ?>
 
-<section id="hero" class="hero-section" role="banner">
-    <div class="hero-container">
-        <!-- Avatar/Image -->
-        <div class="hero-avatar">
-            <div class="avatar-wrapper">
-                <!-- Avatar will be loaded here - can be customizer option or featured image -->
-                <img src="" alt="<?php esc_attr_e('Profile Photo', 'portfolio'); ?>" class="profile-image" loading="lazy">
-            </div>
-        </div>
+<section class="hero-section">
+    <!-- Social icons -->
+    <?php if ($hero_data['show_socials']) : ?>
+    <div class="hero-socials">
+        <?php if (!empty($hero_data['linkedin_url'])) : ?>
+        <a href="<?php echo esc_url($hero_data['linkedin_url']); ?>" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+        <?php endif; ?>
+        <?php if (!empty($hero_data['github_url'])) : ?>
+        <a href="<?php echo esc_url($hero_data['github_url']); ?>" aria-label="GitHub" target="_blank" rel="noopener noreferrer">gh</a>
+        <?php endif; ?>
+        <?php if (!empty($hero_data['dribbble_url'])) : ?>
+        <a href="<?php echo esc_url($hero_data['dribbble_url']); ?>" aria-label="Dribbble" target="_blank" rel="noopener noreferrer">dr</a>
+        <?php endif; ?>
+        <?php if (!empty($hero_data['behance_url'])) : ?>
+        <a href="<?php echo esc_url($hero_data['behance_url']); ?>" aria-label="Behance" target="_blank" rel="noopener noreferrer">be</a>
+        <?php endif; ?>
+    </div>
+    <?php endif; ?>
 
-        <!-- Hero Content -->
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <!-- Main heading - can be customizer option -->
-                <span class="title-greeting"><?php esc_html_e('Hello, I\'m', 'portfolio'); ?></span>
-                <span class="title-name"><?php esc_html_e('Your Name', 'portfolio'); ?></span>
-            </h1>
-            
-            <p class="hero-subtitle">
-                <!-- Professional title/tagline - can be customizer option -->
-                <?php esc_html_e('Web Developer & Creative Designer', 'portfolio'); ?>
-            </p>
-            
-            <p class="hero-description">
-                <!-- Brief description - can be customizer option -->
-                <?php esc_html_e('Creating amazing digital experiences with modern web technologies. Passionate about clean code, user experience, and innovative solutions.', 'portfolio'); ?>
-            </p>
+    <!-- Language (visible on mobile only) -->
+    <?php if ($hero_data['show_lang']) : ?>
+    <div class="hero-lang">
+        <?php foreach ($languages as $lang) : ?>
+            <button class="lang <?php echo ($current_lang === $lang['code']) ? 'active' : ''; ?>" data-lang="<?php echo esc_attr($lang['code']); ?>">
+                <?php echo esc_html($lang['label']); ?>
+            </button>
+            <?php if ($lang !== end($languages)) : ?>
+                <span class="flag"><?php echo esc_html($lang['flag']); ?></span>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
 
-            <!-- Call to Action Buttons -->
-            <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary">
-                    <?php esc_html_e('Get In Touch', 'portfolio'); ?>
-                </a>
-                <a href="#portfolio" class="btn btn-secondary">
-                    <?php esc_html_e('View My Work', 'portfolio'); ?>
-                </a>
-            </div>
+    <!-- Status (visible on mobile only) -->
+    <?php if ($hero_data['show_status']) : ?>
+    <div class="hero-status">
+        <span class="status-dot"></span>
+        <span><?php echo esc_html($hero_data['status_text']); ?></span>
+    </div>
+    <?php endif; ?>
 
-            <!-- Social Icons -->
-            <div class="hero-social">
-                <?php get_template_part('templates/social-links', 'hero'); ?>
-            </div>
-        </div>
+    <!-- Greeting -->
+    <?php if ($hero_data['show_greeting']) : ?>
+    <span class="hero-greeting"><?php echo esc_html($hero_data['greeting_text']); ?></span>
+    <?php endif; ?>
 
-        <!-- Background Elements -->
-        <div class="hero-background">
-            <div class="bg-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
-        </div>
+    <!-- Name -->
+    <h1 class="hero-title">
+        <span><?php echo esc_html($hero_data['first_name']); ?></span>
+        <span><?php echo esc_html($hero_data['last_name']); ?></span>
+    </h1>
 
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            <span class="scroll-text"><?php esc_html_e('Scroll Down', 'portfolio'); ?></span>
-            <div class="scroll-arrow"></div>
-        </div>
+    <!-- Role -->
+    <p class="hero-role">
+        <?php echo esc_html($hero_data['role_text']); ?>
+    </p>
+
+    <!-- Actions -->
+    <div class="hero-actions">
+        <?php if ($hero_data['show_cv_link'] && !empty($hero_data['cv_url'])) : ?>
+        <a href="<?php echo esc_url($hero_data['cv_url']); ?>" class="link-cv" download>
+            <?php echo esc_html($hero_data['cv_text']); ?>
+        </a>
+        <?php endif; ?>
+        <?php if ($hero_data['show_chat_button']) : ?>
+        <button class="btn-chat"><?php echo esc_html($hero_data['chat_button_text']); ?></button>
+        <?php endif; ?>
     </div>
 </section>

@@ -31,6 +31,14 @@
     --home-icons: #6B5CFF;
     --home-icons-muted: #3A3F6B;
 
+    /* Hero Specific Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #a9aedc;
+    --text-muted: #7c82b8;
+    --accent: #6b5cff;
+    --accent-soft: rgba(107, 92, 255, 0.15);
+    --success: #3cff8f;
+
     /* About Section Colors */
     --about-bg: #0C1020;
     --about-card-bg: #11162B;
