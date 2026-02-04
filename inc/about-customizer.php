@@ -106,7 +106,7 @@ function portfolio_about_customizer($wp_customize) {
 
     $wp_customize->add_control('about_interests', array(
         'label'       => __('Interests', 'portfolio'),
-        'description' => __('Enter your interests (e.g., Front-end Development, UI/UX Design)', 'portfolio'),
+        'description' => __('Enter your interests (e.g., Front-end or back-end)', 'portfolio'),
         'section'     => 'about_list',
         'type'        => 'textarea',
     ));

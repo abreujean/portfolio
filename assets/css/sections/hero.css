@@ -300,7 +300,7 @@
    RESPONSIVE DESIGN
    ============================================================ */
 
-/* Tablet (768px - 1024px) */
+/* Tablet (768px - 1600px) */
 @media (min-width: 768px) {
     /* Hide mobile variant on tablet/desktop */
     .hero-socials--mobile {
@@ -379,7 +379,7 @@
 }
 
 /* Desktop (> 1024px) */
-@media (min-width: 1024px) {
+@media (min-width: 1600) {
     .hero {
         padding: 80px 60px;
         max-width: 1400px;
