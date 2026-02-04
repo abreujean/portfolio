@@ -45,6 +45,11 @@
 
         // Initialize all components
         initComponents: function() {
+            // Portfolio carousel
+            if (document.querySelector('.projects-swiper')) {
+                this.initProjectsCarousel();
+            }
+
             // Portfolio filter
             if (document.querySelector('.portfolio-filters')) {
                 this.initPortfolioFilter();
@@ -281,6 +286,77 @@
             }, 5000);
         },
 
+        // Portfolio carousel functionality
+        initProjectsCarousel: function() {
+            const projectsSwiper = new Swiper('.projects-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 5,
+                centeredSlides: true,
+                loop: true,
+                loopAdditionalSlides: 2,
+                slidesPerGroup: 1,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.carousel-nav.next',
+                    prevEl: '.carousel-nav.prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 5,
+                        slidesPerGroup: 1,
+                        loopAdditionalSlides: 2,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 5,
+                        slidesPerGroup: 1,
+                        loopAdditionalSlides: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 5,
+                        slidesPerGroup: 1,
+                        loopAdditionalSlides: 2,
+                    },
+                },
+            });
+
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.projects-filter .filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.dataset.filter;
+
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Filter slides
+                    const slides = document.querySelectorAll('.swiper-slide');
+                    slides.forEach(slide => {
+                        if (filter === 'apps' && slide.dataset.category === 'apps') {
+                            slide.style.display = 'block';
+                        } else if (filter === 'sites' && slide.dataset.category === 'sites') {
+                            slide.style.display = 'block';
+                        } else {
+                            slide.style.display = 'none';
+                        }
+                    });
+
+                    // Update swiper
+                    projectsSwiper.update();
+                });
+            });
+        },
+
         // Portfolio filter functionality
         initPortfolioFilter: function() {
             const filterButtons = document.querySelectorAll('.portfolio-filters .filter-btn');
@@ -289,11 +365,11 @@
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const filter = button.dataset.filter;
-                    
+
                     // Update active button
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
-                    
+
                     // Filter items
                     portfolioItems.forEach(item => {
                         if (filter === 'all' || item.dataset.category.includes(filter)) {

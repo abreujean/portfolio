@@ -6,6 +6,7 @@
 .about-section {
     background-color: var(--about-bg);
     padding: var(--spacing-4xl) 0;
+    margin-bottom: 50px;
 }
 
 /* Grid Layout */

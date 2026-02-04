@@ -1,86 +1,99 @@
 <?php
 /**
  * Portfolio section template part
- * 
+ *
  * @package Portfolio
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
+
+$portfolio_data = portfolio_get_portfolio_data();
+$projects = $portfolio_data['projects'];
 ?>
 
-<section id="portfolio" class="portfolio-section">
-    <div class="container">
-        <header class="section-header">
-            <h2 class="section-title">
-                <?php esc_html_e('My Portfolio', 'portfolio'); ?>
-            </h2>
-            <p class="section-subtitle">
-                <?php esc_html_e('Recent projects I\'ve worked on', 'portfolio'); ?>
-            </p>
-        </header>
-
-        <!-- Portfolio Filters -->
-        <div class="portfolio-filters">
-            <button class="filter-btn active" data-filter="all">
-                <?php esc_html_e('All', 'portfolio'); ?>
-            </button>
-            <button class="filter-btn" data-filter="web">
-                <?php esc_html_e('Web Design', 'portfolio'); ?>
-            </button>
-            <button class="filter-btn" data-filter="development">
-                <?php esc_html_e('Development', 'portfolio'); ?>
-            </button>
-            <button class="filter-btn" data-filter="wordpress">
-                <?php esc_html_e('WordPress', 'portfolio'); ?>
-            </button>
+<section id="portfolio" class="projects-section">
+    <!-- Header -->
+    <header class="projects-header">
+        <div class="portfolio-badge">
+            🔗 <?php esc_html_e('Portfólio', 'portfolio'); ?>
         </div>
 
-        <!-- Portfolio Grid -->
-        <div class="portfolio-grid">
-            <!-- Project Card 1 -->
-            <article class="portfolio-item" data-category="web development">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="" alt="<?php esc_attr_e('Project Thumbnail', 'portfolio'); ?>" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="#" class="btn btn-small view-project" target="_blank" rel="noopener noreferrer">
-                                    <?php esc_html_e('View Live', 'portfolio'); ?>
-                                </a>
-                                <a href="#" class="btn btn-small view-details">
-                                    <?php esc_html_e('Details', 'portfolio'); ?>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">
-                            <?php esc_html_e('Project Title', 'portfolio'); ?>
-                        </h3>
-                        <p class="project-description">
-                            <?php esc_html_e('Brief description of the project and technologies used.', 'portfolio'); ?>
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
+        <h2 class="projects-title">
+            <?php echo esc_html($portfolio_data['title']); ?>
+        </h2>
 
-            <!-- Repeat structure for more projects -->
-            <!-- This is a template - actual projects will be loaded via WordPress or custom data -->
-
-        </div>
-
-        <!-- Load More Button -->
-        <div class="portfolio-actions">
-            <button id="load-more-projects" class="btn btn-secondary">
-                <?php esc_html_e('Load More Projects', 'portfolio'); ?>
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="apps">
+                <?php echo esc_html($portfolio_data['filter_apps']); ?>
             </button>
+            <button class="filter-btn" data-filter="sites">
+                <?php echo esc_html($portfolio_data['filter_sites']); ?>
+            </button>
+        </div>
+    </header>
+
+    <!-- Carousel -->
+    <div class="projects-carousel">
+        <div class="carousel-nav prev"></div>
+        <div class="carousel-nav next"></div>
+
+        <div class="swiper projects-swiper">
+            <div class="swiper-wrapper">
+                <?php foreach ($projects as $index => $project) : ?>
+                    <?php if (!empty($project['title'])) : ?>
+                        <!-- Slide -->
+                        <div class="swiper-slide" data-category="<?php echo esc_attr($project['category']); ?>">
+                            <article class="project-card">
+
+                                <?php if (!empty($project['image'])) : ?>
+                                    <div class="project-image">
+                                        <img src="<?php echo esc_url($project['image']); ?>" alt="<?php echo esc_attr($project['title']); ?>" loading="lazy">
+                                    </div>
+                                <?php endif; ?>
+
+                                <h3 class="project-title">
+                                    <?php echo esc_html($project['title']); ?>
+                                </h3>
+
+                                <?php if (!empty($project['description'])) : ?>
+                                    <p class="project-description">
+                                        <?php echo esc_html($project['description']); ?>
+                                    </p>
+                                <?php endif; ?>
+
+                                <?php if (!empty($project['stack'])) : ?>
+                                    <p class="project-stack">
+                                        <?php echo esc_html($project['stack']); ?>
+                                    </p>
+                                <?php endif; ?>
+
+                                <div class="project-actions">
+                                    <?php if (!empty($project['preview_url'])) : ?>
+                                        <a href="<?php echo esc_url($project['preview_url']); ?>" class="btn-outline" target="_blank" rel="noopener noreferrer">
+                                            <?php esc_html_e('Preview', 'portfolio'); ?>
+                                        </a>
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($project['video_url'])) : ?>
+                                        <a href="<?php echo esc_url($project['video_url']); ?>" class="btn-outline" target="_blank" rel="noopener noreferrer">
+                                            <?php esc_html_e('Vídeo', 'portfolio'); ?>
+                                        </a>
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($project['github_url'])) : ?>
+                                        <a href="<?php echo esc_url($project['github_url']); ?>" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                                            GitHub
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+
+                            </article>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </section>
