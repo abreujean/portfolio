@@ -21,6 +21,7 @@
     background: var(--accent-soft);
     color: var(--accent);
     font-size: var(--text-sm);
+    font-weight: 500;
 }
 
 /* Title */
