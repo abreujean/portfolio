@@ -13,7 +13,7 @@ $portfolio_data = portfolio_get_portfolio_data();
 $projects = $portfolio_data['projects'];
 ?>
 
-<section id="portfolio" class="projects-section">
+<section id="portfolio-section" class="projects-section">
     <!-- Header -->
     <header class="projects-header">
         <div class="portfolio-badge">

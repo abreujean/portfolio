@@ -15,7 +15,7 @@ $recommendations = array_filter($recommendations_data['recommendations'], functi
 });
 ?>
 
-<section id="recommendations" class="testimonials-section">
+<section id="recommendations-section" class="testimonials-section">
     <!-- Header -->
     <div class="testimonials-header">
         <div>

@@ -84,8 +84,8 @@ function portfolio_get_career_data() {
     $data = array(
         'badge' => get_theme_mod('career_badge', '💼 Carreira'),
         'title' => get_theme_mod('career_title', 'Trajetória até aqui'),
-        'professional_period' => get_theme_mod('career_professional_period', '2018 · Atualmente'),
-        'academic_period' => get_theme_mod('career_academic_period', '2015 · Atualmente'),
+        'professional_period' => get_theme_mod('career_professional_period', '2013 · Atualmente'),
+        'academic_period' => get_theme_mod('career_academic_period', '2016 · Atualmente'),
         'professional_experiences' => $professional_experiences,
         'academic_experiences' => $academic_experiences,
     );

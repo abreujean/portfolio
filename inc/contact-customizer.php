@@ -92,7 +92,7 @@ function portfolio_contact_customizer($wp_customize) {
 
     // WhatsApp Number
     $wp_customize->add_setting('contact_whatsapp_number', array(
-        'default'           => '+5521995112602',
+        'default'           => '+5521988905241',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -134,7 +134,7 @@ function portfolio_contact_customizer($wp_customize) {
 
     // Email Address
     $wp_customize->add_setting('contact_email_address', array(
-        'default'           => 'thiagodesousarocha1311@gmail.com',
+        'default'           => 'jeandcabreu@gmail.com',
         'sanitize_callback' => 'sanitize_email',
         'transport'         => 'refresh',
     ));
@@ -162,7 +162,7 @@ function portfolio_contact_customizer($wp_customize) {
 
     // LinkedIn URL
     $wp_customize->add_setting('contact_linkedin_url', array(
-        'default'           => 'https://www.linkedin.com/in/thiago-de-sousa-rocha/',
+        'default'           => 'https://www.linkedin.com/in/jean-abreu-laravel/',
         'sanitize_callback' => 'esc_url_raw',
         'transport'         => 'refresh',
     ));

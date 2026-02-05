@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 $contact_data = portfolio_get_contact_data();
 ?>
 
-<section id="contact" class="contact-section">
+<section id="contact-section" class="contact-section">
     <div class="container">
         <div class="contact-container">
             <!-- Top row: small label + CTA -->

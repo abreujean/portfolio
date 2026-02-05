@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
 $career_data = portfolio_get_career_data();
 ?>
 
-<section id="career" class="career-section">
+<section id="career-section" class="career-section">
     <!-- Badge -->
     <span class="career-badge">
         <?php echo esc_html($career_data['badge']); ?>

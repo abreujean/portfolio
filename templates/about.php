@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 $about_data = portfolio_get_about_data();
 ?>
 
-<section id="about" class="about-section">
+<section id="about-section" class="about-section">
     <div class="container">
         <div class="about-grid">
             <!-- Avatar -->
