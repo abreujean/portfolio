@@ -13,7 +13,7 @@
     display: block;
     font-size: var(--text-sm);
     font-weight: 500;
-    color: var(--about-text);
+    color: var(--text-primary);
     margin-bottom: var(--spacing-xs);
 }
 
@@ -40,7 +40,7 @@
 .form-textarea:focus,
 .form-select:focus {
     outline: none;
-    border-color: var(--contact-input-focus);
+    border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(107, 92, 255, 0.1);
 }
 
@@ -148,8 +148,8 @@
     justify-content: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-md);
-    background-color: var(--contact-input-bg);
-    border: 2px dashed var(--contact-input-border);
+    background-color: var(--about-card-bg);
+    border: 2px dashed var(--portfolio-tag-bg);
     border-radius: var(--radius-md);
     color: var(--text-secondary);
     transition: all var(--transition-normal);

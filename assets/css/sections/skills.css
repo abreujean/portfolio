@@ -5,7 +5,7 @@
 
 .skills-section {
     background-color: var(--skills-bg);
-    padding: 100px 24px 120px;
+    padding: var(--spacing-4xl) var(--spacing-md) var(--spacing-4xl);
     text-align: center;
 }
 
@@ -42,7 +42,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 34px;
+    gap: var(--spacing-xl);
 }
 
 /* Icon */

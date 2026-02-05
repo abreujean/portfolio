@@ -15,7 +15,7 @@
 .card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--skills-icon-primary);
+    border-color: var(--accent);
 }
 
 /* Card Header */
@@ -84,24 +84,24 @@
 /* Card Variants */
 .card-primary {
     background-color: var(--accent);
-    color: #fff;
+    color: var(--text-primary);
     border-color: var(--accent);
 }
 
 .card-primary .card-title,
 .card-primary .card-subtitle {
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .card-secondary {
     background-color: var(--text-secondary);
-    color: #fff;
+    color: var(--text-primary);
     border-color: var(--text-secondary);
 }
 
 .card-secondary .card-title,
 .card-secondary .card-subtitle {
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .card-outline {

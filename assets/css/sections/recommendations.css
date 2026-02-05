@@ -35,7 +35,7 @@
     font-size: 40px;
     font-weight: 800;
     margin: 0;
-    color: var(--recommendations-author-name);
+    color: var(--text-primary);
 }
 
 /* Nav buttons */
@@ -120,7 +120,7 @@
 .quote {
     display: block;
     font-size: 26px;
-    color: var(--recommendations-quote-icon);
+    color: var(--accent);
     margin-bottom: 18px;
 }
 
@@ -149,11 +149,11 @@
 .testimonial-author strong {
     display: block;
     font-size: var(--text-sm);
-    color: var(--recommendations-author-name);
+    color: var(--text-primary);
 }
 
 .testimonial-author span {
-    font-size: 13px;
+    font-size: var(--text-sm);
     color: var(--accent);
 }
 

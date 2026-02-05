@@ -24,7 +24,6 @@
     justify-content: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-3xl);
-
 }
 
 .contact-label {
@@ -34,7 +33,7 @@
     letter-spacing: 1px;
     background: var(--accent-soft);
     padding: 6px 16px;
-    border-radius: 999px;
+    border-radius: var(--radius-full);
 }
 
 .contact-cta {
@@ -43,7 +42,7 @@
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.04);
     padding: 8px 12px;
-    border-radius: 10px;
+    border-radius: var(--radius-lg);
     text-decoration: none;
     transition: all var(--transition-normal);
 }

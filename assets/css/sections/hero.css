@@ -5,14 +5,14 @@
 
 .hero-section {
     background-color: var(--home-bg);
-    color: aliceblue;
-    margin-bottom: 50px;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2xl);
 }
 
 /* Hero Container */
 .hero {
     max-width: 420px;
-    padding: 40px 28px;
+    padding: var(--spacing-3xl) var(--spacing-xl);
     color: var(--text-primary);
     min-height: 100vh;
     margin: 0 auto;
@@ -21,7 +21,7 @@
 /* Socials */
 .hero-socials {
     display: flex;
-    gap: 14px;
+    gap: var(--spacing-md);
     margin-bottom: 5px;
     justify-content: center;
 }
@@ -40,7 +40,7 @@
 .hero-socials a {
     width: 36px;
     height: 36px;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     background: rgba(255,255,255,0.08);
     color: var(--text-secondary);
     display: flex;
@@ -70,7 +70,7 @@
     font-weight: 600;
     cursor: pointer;
     padding: 4px 8px;
-    font-size: 14px;
+    font-size: var(--text-sm);
     transition: color var(--transition-fast);
 }
 
@@ -83,7 +83,7 @@
 }
 
 .hero-lang .flag {
-    font-size: 16px;
+    font-size: var(--text-base);
 }
 
 /* Hero Language Switcher - Mobile Only */
@@ -102,7 +102,7 @@
     border-radius: 0;
     background: none;
     color: var(--text-muted);
-    font-size: var(--text-md);
+    font-size: var(--text-base);
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -122,9 +122,9 @@
 }
 
 .nav-lang-hero .lang img {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
+    width: var(--img-sm);
+    height: var(--img-sm);
+    border-radius: var(--radius-full);
     opacity: 0.7;
     transition: opacity var(--transition-fast);
 }
@@ -139,14 +139,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: var(--spacing-sm);
     padding: 4px 4px;
     background: rgba(60,255,143,0.15);
     color: var(--success);
-    border-radius: 12px;
-    font-size: 14px;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
     font-weight: 500;
-    margin: 0 auto 26px auto;
+    margin: 0 auto var(--spacing-2xl) auto;
     width: 90px;
 }
 
@@ -154,7 +154,7 @@
 .hero-status .status-dot {
     width: 8px;
     height: 8px;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     background: var(--success);
     box-shadow: 0 0 10px rgba(60,255,143,0.9);
 }
@@ -170,7 +170,7 @@
 .hero-image-container {
     width: 100%;
     overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: var(--spacing-2xl);
 }
 
 /* Hero Image */
@@ -199,11 +199,11 @@
 .hero-greeting {
     display: flex;
     padding: 6px 14px;
-    border-radius: 999px;
+    border-radius: var(--radius-full);
     background: var(--accent-soft);
     color: var(--accent);
-    font-size: 14px;
-    margin-bottom: 20px;
+    font-size: var(--text-sm);
+    margin-bottom: var(--spacing-lg);
     width: fit-content;
 }
 
@@ -211,7 +211,7 @@
 .hero-title {
     font-size: 48px;
     line-height: 1.08;
-    margin: 0 0 14px;
+    margin: 0 0 var(--spacing-md);
     font-weight: 800;
     letter-spacing: -1px;
 }
@@ -223,7 +223,7 @@
 /* Role */
 .hero-role {
     color: var(--text-secondary);
-    font-size: 16px;
+    font-size: var(--text-base);
 }
 
 /* Actions container (left column in desktop) */
@@ -237,7 +237,7 @@
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    gap: 5px;
+    gap: var(--spacing-xs);
     justify-content: center;
     height: 100%
 }
@@ -246,7 +246,7 @@
     color: var(--accent);
     text-decoration: none;
     font-weight: 500;
-    font-size: 14px;
+    font-size: var(--text-sm);
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -257,20 +257,20 @@
 }
 
 .link-cv .download-icon {
-    width: 16px;
-    height: 16px;
+    width: var(--img-xs);
+    height: var(--img-xs);
 }
 
 .btn-chat {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--spacing-sm);
     padding: 6px 10px;
-    border-radius: 10px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--accent);
     background: transparent;
     color: var(--accent);
-    font-size: 14px;
+    font-size: var(--text-sm);
     text-decoration: none;
     transition: all var(--transition-normal);
     font-family: inherit;
@@ -278,8 +278,8 @@
 
 .btn-chat .whatsapp-icon {
     fill: var(--accent);
-    width: 15px;
-    height: 15px;
+    width: var(--img-sm);
+    height: var(--img-sm);
 }
 
 .btn-chat:hover {
@@ -310,9 +310,51 @@
     .hero-socials--desktop {
         display: flex;
     }
+
+    .hero {
+        padding: var(--spacing-4xl) var(--spacing-3xl);
+    }
+
+    /* Tablet layout - simpler, still uses 3-column but more compact */
+    .hero-content {
+        display: flex;
+        justify-content:center;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-content .hero-container {
+        width: 600px;
+        max-width: 400px;
+        height: 400px;
+        justify-content: center;
+    }
+
+    .hero-actions {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-center {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-right {
+        flex: 0 0 auto;
+    }
+
+    .hero-socials--desktop {
+        flex-direction: row;
+        gap: var(--spacing-md);
+    }
     
     .hero {
-        padding: 60px 40px;
+        padding: var(--spacing-4xl) var(--spacing-3xl);
     }
 
     /* Tablet layout - simpler, still uses 3-column but more compact */
@@ -355,11 +397,11 @@
 
     .hero-title {
         font-size: 56px;
-        margin-bottom: 20px;
+        margin-bottom: var(--spacing-lg);
     }
 
     .hero-role {
-        font-size: 18px;
+        font-size: var(--text-lg);
     }
 
     /* Hide lang and status on tablet/desktop (they appear in the menu) */
@@ -385,7 +427,7 @@
 @media (min-width: 1600) {
     .hero {
         padding: 80px 60px;
-        max-width: 1400px;
+        max-width: var(--container-3xl);
     }
 
     /* Desktop 3-column layout */
@@ -396,7 +438,7 @@
         gap: 40px;
         flex-direction: row;
         max-width: 85%;
-        margin: 50px auto 0 auto;
+        margin: var(--spacing-2xl) auto 0 auto;
     }
       .hero-content .hero-container {
         width: 500px;
@@ -433,25 +475,25 @@
     }
 
     .hero-greeting {
-        margin-bottom: 20px;
+        margin-bottom: var(--spacing-lg);
     }
 
     .hero-title {
         font-size: 64px;
-        margin-bottom: 20px;
+        margin-bottom: var(--spacing-lg);
     }
 
     .hero-role {
-        font-size: 18px;
+        font-size: var(--text-lg);
     }
 
     .hero-actions {
-        gap: 24px;
+        gap: var(--spacing-xl);
     }
 
     .btn-chat {
         padding: 6px 10px;
-        font-size: 15px;
+        font-size: var(--text-base);
     }
 
     /* Hero Image - Desktop */
@@ -486,11 +528,11 @@
     .hero-actions {
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
+        gap: var(--spacing-md);
     }
 
     .hero-image {
-        margin-top: 30px;
+        margin-top: var(--spacing-2xl);
         margin-left: 2.5%;
     }
 }
