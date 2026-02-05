@@ -15,7 +15,7 @@ $skills_icons = array_filter($skills_data['icons'], function($icon) {
 });
 ?>
 
-<section class="skills-section">
+<section class="skills-section" id="skills-section">
     <!-- Badge -->
     <?php if (!empty($skills_data['badge'])) : ?>
         <span class="skills-badge">

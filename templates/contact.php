@@ -1,166 +1,79 @@
 <?php
 /**
  * Contact section template part
- * 
+ *
  * @package Portfolio
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
+
+$contact_data = portfolio_get_contact_data();
 ?>
 
 <section id="contact" class="contact-section">
     <div class="container">
-        <header class="section-header">
-            <h2 class="section-title">
-                <?php esc_html_e('Get In Touch', 'portfolio'); ?>
-            </h2>
-            <p class="section-subtitle">
-                <?php esc_html_e('Let\'s discuss your next project', 'portfolio'); ?>
-            </p>
-        </header>
+        <div class="contact-container">
+            <!-- Top row: small label + CTA -->
+            <div class="contact-top">
+                <?php if (!empty($contact_data['badge'])) : ?>
+                    <span class="contact-label">
+                        <?php echo esc_html($contact_data['badge']); ?>
+                    </span>
+                <?php endif; ?>
 
-        <div class="contact-content">
-            <!-- Contact Information -->
-            <div class="contact-info">
-                <div class="contact-card">
-                    <h3><?php esc_html_e('Let\'s Connect', 'portfolio'); ?></h3>
-                    <p>
-                        <?php esc_html_e('I\'m always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!', 'portfolio'); ?>
-                    </p>
-
-                    <!-- Contact Details -->
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="icon-email"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4><?php esc_html_e('Email', 'portfolio'); ?></h4>
-                                <a href="mailto:hello@example.com" class="contact-link">
-                                    hello@example.com
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="icon-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4><?php esc_html_e('Phone', 'portfolio'); ?></h4>
-                                <a href="tel:+1234567890" class="contact-link">
-                                    +1 (234) 567-890
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="icon-location"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4><?php esc_html_e('Location', 'portfolio'); ?></h4>
-                                <span class="contact-link">
-                                    Your City, Country
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Links -->
-                    <div class="contact-social">
-                        <h4><?php esc_html_e('Follow Me', 'portfolio'); ?></h4>
-                        <?php get_template_part('templates/social-links', 'contact'); ?>
-                    </div>
-                </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <div class="form-card">
-                    <h3><?php esc_html_e('Send Message', 'portfolio'); ?></h3>
-                    
-                    <?php echo do_shortcode('[contact-form-7 id="1" title="Contact form 1"]'); ?>
-                    
-                    <!-- Fallback HTML Form if CF7 not available -->
-                    <form id="portfolio-contact-form" class="contact-form-element" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
-                        <?php wp_nonce_field('portfolio_contact_nonce', 'contact_nonce'); ?>
-                        <input type="hidden" name="action" value="portfolio_submit_contact">
+            <!-- Title and subtitle -->
+            <?php if (!empty($contact_data['title'])) : ?>
+                <h2 class="contact-title">
+                    <?php echo esc_html($contact_data['title']); ?>
+                </h2>
+            <?php endif; ?>
 
-                        <div class="form-group">
-                            <label for="contact-name" class="form-label">
-                                <?php esc_html_e('Name', 'portfolio'); ?>
-                                <span class="required">*</span>
-                            </label>
-                            <input 
-                                type="text" 
-                                id="contact-name" 
-                                name="contact_name" 
-                                class="form-input" 
-                                required 
-                                aria-required="true"
-                                placeholder="<?php esc_attr_e('Your Name', 'portfolio'); ?>"
-                            >
-                        </div>
+            <?php if (!empty($contact_data['subtitle'])) : ?>
+                <p class="contact-subtitle">
+                    <?php echo esc_html($contact_data['subtitle']); ?>
+                </p>
+            <?php endif; ?>
 
-                        <div class="form-group">
-                            <label for="contact-email" class="form-label">
-                                <?php esc_html_e('Email', 'portfolio'); ?>
-                                <span class="required">*</span>
-                            </label>
-                            <input 
-                                type="email" 
-                                id="contact-email" 
-                                name="contact_email" 
-                                class="form-input" 
-                                required 
-                                aria-required="true"
-                                placeholder="<?php esc_attr_e('your@email.com', 'portfolio'); ?>"
-                            >
-                        </div>
+            <!-- Contact Actions -->
+            <div class="contact-actions">
+                <!-- WhatsApp -->
+                <?php if (!empty($contact_data['whatsapp_number'])) : ?>
+                    <a class="btn whatsapp"
+                       href="<?php echo esc_url('https://wa.me/' . preg_replace('/[^0-9]/', '', $contact_data['whatsapp_number'])); ?>"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path fill="currentColor" d="M20.52 3.48A11.94 11.94 0 0012 0C5.37 0 .01 5.36.01 12a11.9 11.9 0 001.86 6.28L0 24l5.9-1.54A11.94 11.94 0 0012 24c6.63 0 12-5.36 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.6c-1.6 0-3.16-.42-4.52-1.22l-.32-.19-3.5.91.94-3.41-.21-.35A9.6 9.6 0 012.4 12c0-5.3 4.3-9.6 9.6-9.6 2.56 0 4.96.99 6.77 2.8A9.56 9.56 0 0121.6 12c0 5.3-4.3 9.6-9.6 9.6z"/>
+                            <path fill="currentColor" d="M17.1 14.1c-.3-.15-1.8-.9-2.1-1-.3-.1-.5-.15-.7.15-.2.3-.8 1-.98 1.2-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.9-.8-1.5-1.8-1.68-2.1-.18-.3 0-.46.13-.61.13-.13.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2 0-.38-.05-.53-.05-.15-.66-1.6-.9-2.2-.24-.6-.48-.5-.66-.5-.18 0-.38 0-.58 0-.2 0-.53.07-.8.38-.27.3-1.03 1-1.03 2.45 0 1.45 1.05 2.85 1.2 3.05.15.2 2.08 3.2 5.05 4.5 2.97 1.3 2.97.87 3.5.82.53-.05 1.72-.7 1.97-1.37.25-.67.25-1.25.18-1.37-.07-.12-.27-.2-.57-.35z"/>
+                        </svg>
+                        <span><?php echo esc_html($contact_data['whatsapp_button_text']); ?></span>
+                    </a>
+                <?php endif; ?>
 
-                        <div class="form-group">
-                            <label for="contact-subject" class="form-label">
-                                <?php esc_html_e('Subject', 'portfolio'); ?>
-                            </label>
-                            <input 
-                                type="text" 
-                                id="contact-subject" 
-                                name="contact_subject" 
-                                class="form-input" 
-                                placeholder="<?php esc_attr_e('Project Discussion', 'portfolio'); ?>"
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="contact-message" class="form-label">
-                                <?php esc_html_e('Message', 'portfolio'); ?>
-                                <span class="required">*</span>
-                            </label>
-                            <textarea 
-                                id="contact-message" 
-                                name="contact_message" 
-                                class="form-textarea" 
-                                rows="5" 
-                                required 
-                                aria-required="true"
-                                placeholder="<?php esc_attr_e('Tell me about your project...', 'portfolio'); ?>"
-                            ></textarea>
-                        </div>
-
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">
-                                <?php esc_html_e('Send Message', 'portfolio'); ?>
-                            </button>
-                        </div>
-
-                        <!-- Form Messages -->
-                        <div id="form-messages" class="form-messages" aria-live="polite"></div>
-                    </form>
-                </div>
+                <!-- Email -->
+                <?php if (!empty($contact_data['email_address'])) : ?>
+                    <a class="contact-email" href="mailto:<?php echo esc_html($contact_data['email_address']); ?>">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path fill="currentColor" d="M2 3.5L22 12 2 20.5 2 13l12-1L2 11z"/>
+                        </svg>
+                        <span>
+                            <?php echo esc_html($contact_data['email_button_text']); ?>:
+                            <strong><?php echo esc_html($contact_data['email_address']); ?></strong>
+                        </span>
+                    </a>
+                <?php endif; ?>
             </div>
+
+            <!-- Back to Top -->
+            <?php if (!empty($contact_data['back_to_top_text'])) : ?>
+                <a class="back-to-top" href="#top">
+                    <?php echo esc_html($contact_data['back_to_top_text']); ?>
+                </a>
+            <?php endif; ?>
         </div>
     </div>
 </section>

@@ -20,6 +20,10 @@ require_once get_template_directory() . '/inc/career-section.php';
 require_once get_template_directory() . '/inc/career-customizer.php';
 require_once get_template_directory() . '/inc/recommendations-section.php';
 require_once get_template_directory() . '/inc/recommendations-customizer.php';
+require_once get_template_directory() . '/inc/contact-section.php';
+require_once get_template_directory() . '/inc/contact-customizer.php';
+require_once get_template_directory() . '/inc/footer-section.php';
+require_once get_template_directory() . '/inc/footer-customizer.php';
 
 /**
  * Allow SVG uploads in WordPress

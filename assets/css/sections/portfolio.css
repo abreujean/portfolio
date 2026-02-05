@@ -15,6 +15,11 @@
     margin-bottom: var(--spacing-3xl);
 }
 
+.projects-section .swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+ 
 /* Portfolio Badge */
 .portfolio-badge {
     display: flex;
@@ -195,7 +200,7 @@
     position: absolute;
     top: 50%;
     width: 50px;
-    height: 65px;
+    padding: 12px;
     border-radius: var(--radius-lg);
     background: transparent;
     border: 1px solid var(--accent);
@@ -203,6 +208,14 @@
     cursor: pointer;
     z-index: 10;
     transition: all var(--transition-fast);
+}
+
+.carousel-nav img {
+    width: 30px;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    filter: brightness(0) saturate(100%) invert(28%) sepia(100%) saturate(3999%) hue-rotate(226deg) brightness(96%) contrast(91%);
 }
 
 .carousel-nav:hover {

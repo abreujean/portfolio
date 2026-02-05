@@ -291,13 +291,13 @@
             const projectsSwiper = new Swiper('.projects-swiper', {
                 slidesPerView: 1,
                 spaceBetween: 5,
-                centeredSlides: true,
+                centeredSlides: false,
                 loop: true,
-                loopAdditionalSlides: 2,
+                loopAdditionalSlides: 1,
                 slidesPerGroup: 1,
                 autoplay: {
                     delay: 5000,
-                    disableOnInteraction: false,
+                    disableOnInteraction: true,
                 },
                 pagination: {
                     el: '.swiper-pagination',

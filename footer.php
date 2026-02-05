@@ -1,40 +1,32 @@
-    <!-- Footer Section -->
-    <footer id="site-footer" class="site-footer" role="contentinfo">
-        <div class="footer-container">
-            <!-- Social Links -->
-            <div class="footer-social">
-                <?php get_template_part('templates/social-links'); ?>
-            </div>
-            
-            <!-- Copyright Information -->
-            <div class="footer-copyright">
-                <p class="copyright-text">
-                    &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. 
-                    <?php 
-                    /* translators: %s: WordPress link */
-                    printf(esc_html__('Proudly powered by %s', 'portfolio'), '<a href="' . esc_url(__('https://wordpress.org/', 'portfolio')) . '" target="_blank" rel="noopener noreferrer">WordPress</a>'); 
-                    ?>
-                </p>
-            </div>
-            
-            <!-- Theme Info -->
-            <div class="footer-theme">
-                <p class="theme-info">
-                    <?php 
-                    /* translators: 1: theme name, 2: author */
-                    printf(esc_html__('Theme: %1$s by %2$s', 'portfolio'), 'Portfolio', 'Portfolio Author'); 
-                    ?>
-                </p>
-            </div>
-        </div>
-    </footer>
+     <!-- Footer Section -->
+     <footer id="site-footer" class="site-footer" role="contentinfo">
+         <?php
+         $footer_data = portfolio_get_footer_data();
+         ?>
+          <div class="footer-container">
+              <p class="footer-copy">
+                  Copyright © <?php echo esc_html($footer_data['copyright_text']); ?> · <?php echo date('Y'); ?>
+              </p>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="<?php esc_attr_e('Back to top', 'portfolio'); ?>">
-        <span class="screen-reader-text"><?php esc_html_e('Back to top', 'portfolio'); ?></span>
-        <i class="icon-arrow-up" aria-hidden="true"></i>
-    </button>
+             <div class="footer-social">
+                 <!-- LinkedIn -->
+                 <?php if (!empty($footer_data['linkedin_url'])) : ?>
+                     <a href="<?php echo esc_url($footer_data['linkedin_url']); ?>" target="_blank" rel="noopener noreferrer" class="social-link linkedin">
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/linkedin.svg');?>" alt="LinkedIn">
+                     </a>
+                 <?php endif; ?>
 
-    <?php wp_footer(); ?>
-</body>
-</html>
+                 <!-- GitHub -->
+                 <?php if (!empty($footer_data['github_url'])) : ?>
+                     <a href="<?php echo esc_url($footer_data['github_url']); ?>" target="_blank" rel="noopener noreferrer" class="social-link github">
+                                 <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/github.svg');?>" alt="GitHub">
+                     </a>
+                 <?php endif; ?>
+
+             </div>
+         </div>
+     </footer>
+
+     <?php wp_footer(); ?>
+ </body>
+ </html>
