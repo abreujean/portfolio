@@ -10,6 +10,9 @@ if (!defined('ABSPATH')) {
 }
 
 $skills_data = portfolio_get_skills_data();
+$skills_icons = array_filter($skills_data['icons'], function($icon) {
+    return !empty($icon);
+});
 ?>
 
 <section class="skills-section">
@@ -35,13 +38,13 @@ $skills_data = portfolio_get_skills_data();
     <?php endif; ?>
 
     <!-- Icons -->
-    <?php if (!empty($skills_data['icons'])) : ?>
+    <?php if (!empty($skills_icons)) : ?>
         <div class="skills-icons">
-            <?php foreach ($skills_data['icons'] as $icon) : ?>
+            <?php foreach ($skills_icons as $icon) : ?>
                 <?php if (!empty($icon)) : ?>
-                    <span class="skill-icon">
-                        <?php echo esc_html($icon); ?>
-                    </span>
+                    <div class="skill-icon">
+                        <img src="<?php echo esc_url($icon); ?>" alt="Skill icon" loading="lazy" />
+                    </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>

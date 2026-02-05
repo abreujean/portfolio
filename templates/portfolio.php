@@ -36,8 +36,8 @@ $projects = $portfolio_data['projects'];
 
     <!-- Carousel -->
     <div class="projects-carousel">
-        <div class="carousel-nav prev"></div>
-        <div class="carousel-nav next"></div>
+        <div class="carousel-nav prev"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/left-arrow.svg');?>" alt="right arrow"></div>
+        <div class="carousel-nav next"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/right-arrow.svg');?>" alt="right arrow"> </div>
 
         <div class="swiper projects-swiper">
             <div class="swiper-wrapper">

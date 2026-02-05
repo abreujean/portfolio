@@ -61,7 +61,7 @@
             }
 
             // Recommendations carousel
-            if (document.querySelector('.recommendations-grid')) {
+            if (document.querySelector('.testimonials-swiper')) {
                 this.initRecommendationsCarousel();
             }
 
@@ -413,8 +413,34 @@
 
         // Recommendations carousel
         initRecommendationsCarousel: function() {
-            // Basic carousel functionality
-            // This can be extended with swipe gestures and auto-play
+            const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 32,
+                loop: true,
+                loopAdditionalSlides: 2,
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-prev',
+                    prevEl: '.swiper-button-next',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 32,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 32,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 32,
+                    },
+                },
+            });
         },
 
         // Back to top button

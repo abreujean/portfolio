@@ -80,16 +80,16 @@ function portfolio_skills_customizer($wp_customize) {
     for ($i = 1; $i <= 10; $i++) {
         $wp_customize->add_setting("skills_icon_{$i}", array(
             'default'           => '',
-            'sanitize_callback' => 'sanitize_text_field',
+            'sanitize_callback' => 'esc_url_raw',
             'transport'         => 'refresh',
         ));
 
-        $wp_customize->add_control("skills_icon_{$i}", array(
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "skills_icon_{$i}", array(
             'label'       => sprintf(__('Icon %d', 'portfolio'), $i),
-            'description' => sprintf(__('Enter icon text or emoji for skill %d', 'portfolio'), $i),
+            'description' => sprintf(__('Upload icon image for skill %d (recommended size: 64x64px, PNG/SVG)', 'portfolio'), $i),
             'section'     => 'skills_icons',
-            'type'        => 'text',
-        ));
+            'settings'    => "skills_icon_{$i}",
+        )));
     }
 }
 add_action('customize_register', 'portfolio_skills_customizer');

@@ -194,11 +194,11 @@
 .carousel-nav {
     position: absolute;
     top: 50%;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(15, 20, 40, 0.8);
-    border: 1px solid rgba(120, 110, 255, 0.35);
+    width: 50px;
+    height: 65px;
+    border-radius: var(--radius-lg);
+    background: transparent;
+    border: 1px solid var(--accent);
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 10;
@@ -206,8 +206,7 @@
 }
 
 .carousel-nav:hover {
-    background: rgba(107, 92, 255, 0.3);
-    border-color: var(--accent);
+    background: var(--accent-soft);
 }
 
 .carousel-nav.prev {
