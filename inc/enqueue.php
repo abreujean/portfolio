@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Enqueue theme styles and scripts
  */
 function portfolio_enqueue_assets() {
+	// Enqueue Google Fonts (Poppins for headings, Inter for body)
+	wp_enqueue_style( 'portfolio-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap', array(), '1.0.0' );
+
 	// Enqueue main stylesheet
 	wp_enqueue_style( 'portfolio-style', get_stylesheet_uri(), array(), '1.0.0' );
 

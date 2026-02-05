@@ -3,12 +3,6 @@
    Global typography styles
    ============================================================ */
 
-/* Font Families */
-:root {
-    --font-family-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    --font-family-secondary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
 /* Base Typography */
 html {
     font-size: 16px;

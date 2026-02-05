@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<div class="nav-logo" onclick="document.getElementById('main-content').scrollIntoView({behavior:'smooth'})">
+<div class="nav-logo" onclick="window.location.href='<?php echo esc_url(home_url('/')); ?>'">
     <?php if (has_custom_logo()) : ?>
         <div class="logo-container">
             <?php the_custom_logo(); ?>
