@@ -43,7 +43,7 @@ function portfolio_about_customizer($wp_customize) {
 
     // Badge Text
     $wp_customize->add_setting('about_badge', array(
-        'default'           => '👋 Sobre mim',
+        'default'           => '🧐 Sobre mim',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -57,7 +57,7 @@ function portfolio_about_customizer($wp_customize) {
 
     // Name
     $wp_customize->add_setting('about_name', array(
-        'default'           => 'Washington Henrique Fernandes de Sousa',
+        'default'           => 'Jean Abreu',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));

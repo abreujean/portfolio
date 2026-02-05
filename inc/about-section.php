@@ -13,8 +13,8 @@
 function portfolio_get_about_data() {
     return array(
         'avatar'           => get_theme_mod('about_avatar', ''),
-        'badge'            => get_theme_mod('about_badge', '👋 Sobre mim'),
-        'name'             => get_theme_mod('about_name', 'Washington Henrique Fernandes de Sousa'),
+        'badge'            => get_theme_mod('about_badge', ''),
+        'name'             => get_theme_mod('about_name', ''),
         'description'      => get_theme_mod('about_description', ''),
         'interests'        => get_theme_mod('about_interests', ''),
         'objective'        => get_theme_mod('about_objective', ''),

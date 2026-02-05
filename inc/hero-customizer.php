@@ -57,7 +57,7 @@ function portfolio_hero_customizer($wp_customize) {
 
     // Role Text
     $wp_customize->add_setting('hero_role_text', array(
-        'default'           => 'FullStack developer · UI designer',
+        'default'           => 'FullStack developer',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -85,7 +85,7 @@ function portfolio_hero_customizer($wp_customize) {
 
     // Status Text
     $wp_customize->add_setting('hero_status_text', array(
-        'default'           => 'Available for work',
+        'default'           => 'Status',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));

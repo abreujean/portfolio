@@ -12,8 +12,8 @@
  */
 function portfolio_get_footer_data() {
     return array(
-        'copyright_text'  => get_theme_mod('footer_copyright_text', 'Henrique Sousa'),
-        'linkedin_url'    => get_theme_mod('footer_linkedin_url', 'https://www.linkedin.com/in/thiago-de-sousa-rocha/'),
-        'github_url'      => get_theme_mod('footer_github_url', 'https://github.com/thiago-sousa'),
+        'copyright_text'  => get_theme_mod('footer_copyright_text', ''),
+        'linkedin_url'    => get_theme_mod('footer_linkedin_url', ''),
+        'github_url'      => get_theme_mod('footer_github_url', ''),
     );
 }

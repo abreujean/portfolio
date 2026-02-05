@@ -29,7 +29,7 @@ function portfolio_contact_customizer($wp_customize) {
 
     // Contact Badge
     $wp_customize->add_setting('contact_badge', array(
-        'default'           => '📬 Contact',
+        'default'           => '📬 Contato',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));

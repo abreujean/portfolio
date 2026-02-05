@@ -64,7 +64,7 @@ function portfolio_career_customizer($wp_customize) {
 
     // Professional Period
     $wp_customize->add_setting('career_professional_period', array(
-        'default'           => '2018 · Atualmente',
+        'default'           => '2020 · Atualmente',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -78,7 +78,7 @@ function portfolio_career_customizer($wp_customize) {
 
     // Professional Experience 1
     $wp_customize->add_setting('career_professional_1_title', array(
-        'default'           => 'Infor Brasil | Engenheiro de Software I<br>Desenvolvedor Front-end',
+        'default'           => '',
         'sanitize_callback' => 'wp_kses_post',
         'transport'         => 'refresh',
     ));
@@ -90,7 +90,7 @@ function portfolio_career_customizer($wp_customize) {
     ));
 
     $wp_customize->add_setting('career_professional_1_description', array(
-        'default'           => 'Empresa multinacional de tecnologia, contribuindo para um projeto internacional voltado ao mercado da Ásia e Canadá. Atuei principalmente no desenvolvimento Front-end, focando em interfaces escaláveis, acessíveis e com boas práticas de arquitetura.',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_textarea_field',
         'transport'         => 'refresh',
     ));
@@ -102,7 +102,7 @@ function portfolio_career_customizer($wp_customize) {
     ));
 
     $wp_customize->add_setting('career_professional_1_tags', array(
-        'default'           => 'React.js, TypeScript, JavaScript, Tailwind, Jest, Next.js, Git, GitHub, Figma, Jira, GitHub Actions, Confluence',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -115,7 +115,7 @@ function portfolio_career_customizer($wp_customize) {
     ));
 
     $wp_customize->add_setting('career_professional_1_period', array(
-        'default'           => '• Nov/2021 · Atualmente',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -141,7 +141,7 @@ function portfolio_career_customizer($wp_customize) {
 
     // Professional Experience 2
     $wp_customize->add_setting('career_professional_2_title', array(
-        'default'           => 'Better Tech | Desenvolvedor Front-end Sênior',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -153,7 +153,7 @@ function portfolio_career_customizer($wp_customize) {
     ));
 
     $wp_customize->add_setting('career_professional_2_description', array(
-        'default'           => 'Atuação no desenvolvimento de interfaces web para soluções educacionais, trabalhando lado a lado com designers e stakeholders para entrega de produtos escaláveis.',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_textarea_field',
         'transport'         => 'refresh',
     ));
@@ -165,7 +165,7 @@ function portfolio_career_customizer($wp_customize) {
     ));
 
     $wp_customize->add_setting('career_professional_2_tags', array(
-        'default'           => 'HTML, React.js, TypeScript, JavaScript, Tailwind, Next.js, Git, GitHub, Figma',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -178,7 +178,7 @@ function portfolio_career_customizer($wp_customize) {
     ));
 
     $wp_customize->add_setting('career_professional_2_period', array(
-        'default'           => 'Dez/2021 · Nov/2022',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -211,7 +211,7 @@ function portfolio_career_customizer($wp_customize) {
 
     // Academic Period
     $wp_customize->add_setting('career_academic_period', array(
-        'default'           => '2015 · Atualmente',
+        'default'           => '2011 · Atualmente',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -225,7 +225,7 @@ function portfolio_career_customizer($wp_customize) {
 
     // Academic Experience 1
     $wp_customize->add_setting('career_academic_1_title', array(
-        'default'           => 'Pós-graduação | MBA em Desenvolvimento Full-stack',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -237,7 +237,7 @@ function portfolio_career_customizer($wp_customize) {
     ));
 
     $wp_customize->add_setting('career_academic_1_description', array(
-        'default'           => 'Pós-graduação focada em tecnologias modernas para aplicações web, arquitetura de software e boas práticas de desenvolvimento.',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_textarea_field',
         'transport'         => 'refresh',
     ));
@@ -249,7 +249,7 @@ function portfolio_career_customizer($wp_customize) {
     ));
 
     $wp_customize->add_setting('career_academic_1_period', array(
-        'default'           => 'Out/2024 · Fev/2025',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -262,7 +262,7 @@ function portfolio_career_customizer($wp_customize) {
 
     // Academic Experience 2
     $wp_customize->add_setting('career_academic_2_title', array(
-        'default'           => 'Superior | Análise e Desenvolvimento de Sistemas',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -274,7 +274,7 @@ function portfolio_career_customizer($wp_customize) {
     ));
 
     $wp_customize->add_setting('career_academic_2_description', array(
-        'default'           => 'Graduação pela FATEC de São José dos Campos em Análise e Desenvolvimento de Sistemas.',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_textarea_field',
         'transport'         => 'refresh',
     ));
@@ -286,7 +286,7 @@ function portfolio_career_customizer($wp_customize) {
     ));
 
     $wp_customize->add_setting('career_academic_2_period', array(
-        'default'           => 'Ago/2018 · Ago/2021',
+        'default'           => '',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));

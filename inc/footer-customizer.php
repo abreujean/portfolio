@@ -29,7 +29,7 @@ function portfolio_footer_customizer($wp_customize) {
 
     // Copyright Text
     $wp_customize->add_setting('footer_copyright_text', array(
-        'default'           => 'Henrique Sousa',
+        'default'           => 'Jean Abreu',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -50,7 +50,7 @@ function portfolio_footer_customizer($wp_customize) {
 
     // LinkedIn URL
     $wp_customize->add_setting('footer_linkedin_url', array(
-        'default'           => 'https://www.linkedin.com/in/thiago-de-sousa-rocha/',
+        'default'           => 'https://www.linkedin.com/in/jean-abreu-laravel/',
         'sanitize_callback' => 'esc_url_raw',
         'transport'         => 'refresh',
     ));
@@ -64,7 +64,7 @@ function portfolio_footer_customizer($wp_customize) {
 
     // GitHub URL
     $wp_customize->add_setting('footer_github_url', array(
-        'default'           => 'https://github.com/thiago-sousa',
+        'default'           => 'https://github.com/abreujean',
         'sanitize_callback' => 'esc_url_raw',
         'transport'         => 'refresh',
     ));
