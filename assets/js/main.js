@@ -416,15 +416,14 @@
             const testimonialsSwiper = new Swiper('.testimonials-swiper', {
                 slidesPerView: 1,
                 spaceBetween: 32,
-                loop: true,
-                loopAdditionalSlides: 2,
+                loop: false,
                 autoplay: {
                     delay: 2000,
                     disableOnInteraction: false,
                 },
                 navigation: {
-                    nextEl: '.swiper-button-prev',
-                    prevEl: '.swiper-button-next',
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
                 },
                 breakpoints: {
                     640: {
