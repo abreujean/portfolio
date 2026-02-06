@@ -57,7 +57,7 @@ function portfolio_hero_customizer($wp_customize) {
 
     // Role Text
     $wp_customize->add_setting('hero_role_text', array(
-        'default'           => 'FullStack developer',
+        'default'           => 'Full Stack developer',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
