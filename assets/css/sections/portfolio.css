@@ -107,19 +107,25 @@
 
 /* Image */
 .project-image {
+    width: var(--img-5xl);
     height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: var(--spacing-xl);
+    margin: 0 auto var(--spacing-xl);
     flex-shrink: 0;
+    background-color: rgba(255,255,255, 0.02);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
 }
 
 .project-image img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+    padding: var(--spacing-sm);
 }
 
 /* Text */
