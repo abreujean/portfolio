@@ -1,15 +1,27 @@
 /**
  * Main JavaScript File for Portfolio Theme
- * 
+ *
  * Handles global functionality and component initialization
+ *
+ * @package Portfolio
+ * @version 1.0.0
  */
 
 (function() {
     'use strict';
 
-    // Portfolio App Object
+    // ============================================================
+    // PORTFOLIO CORE MODULE
+    // ============================================================
+
+    /**
+     * Portfolio Core Application
+     * Manages global functionality and coordinates component initialization
+     */
     window.Portfolio = {
-        // Configuration
+        /**
+         * Global configuration
+         */
         config: {
             smoothScroll: true,
             animatedOnScroll: true,
@@ -17,59 +29,43 @@
             animationDuration: 300
         },
 
-        // Components registry
+        /**
+         * Components registry
+         */
         components: {},
-        
-        // Utility functions
+
+        /**
+         * Utility functions registry
+         */
         utils: {},
-        
-        // Initialize all components
+
+        /**
+         * Initialize the application
+         * Bootstraps all global components and feature modules
+         */
         init: function() {
             console.log('Portfolio theme initialized');
-            
-            // Initialize components
+
+            // Initialize global UI components
             this.initNavigation();
             this.initLanguageSwitcher();
             this.initScrollEffects();
             this.initAnimations();
             this.initContactForm();
             this.initBackToTop();
-            
-            // Initialize custom components when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', this.initComponents.bind(this));
-            } else {
-                this.initComponents();
-            }
-        },
 
-        // Initialize all components
-        initComponents: function() {
-            // Portfolio carousel
-            if (document.querySelector('.projects-swiper')) {
-                this.initProjectsCarousel();
-            }
-
-            // Portfolio filter
-            if (document.querySelector('.portfolio-filters')) {
-                this.initPortfolioFilter();
-            }
-
-            // Skills filter
-            if (document.querySelector('.skills-categories')) {
-                this.initSkillsFilter();
-            }
-
-            // Recommendations carousel
-            if (document.querySelector('.testimonials-swiper')) {
-                this.initRecommendationsCarousel();
-            }
-
-            // Lazy loading for images
+            // Initialize utility components
             this.initLazyLoading();
         },
 
-        // Navigation functionality
+        // ============================================================
+        // GLOBAL UI COMPONENTS
+        // ============================================================
+
+        /**
+         * Navigation Component
+         * Mobile menu toggle and smooth scroll functionality
+         */
         initNavigation: function() {
             const menuToggle = document.getElementById('menu-toggle');
             const menuClose = document.getElementById('menu-close');
@@ -78,10 +74,13 @@
 
             if (!menuToggle || !primaryMenu) return;
 
-            // Toggle mobile menu
+            /**
+             * Toggle mobile menu
+             * @param {boolean} show - Whether to show or hide menu
+             */
             function toggleMenu(show) {
                 const isShown = show !== undefined ? show : !primaryMenu.classList.contains('active');
-                
+
                 primaryMenu.classList.toggle('active', isShown);
                 menuOverlay.classList.toggle('active', isShown);
                 menuToggle.setAttribute('aria-expanded', isShown);
@@ -116,7 +115,7 @@
                 link.addEventListener('click', (e) => {
                     const targetId = link.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
-                    
+
                     if (targetElement) {
                         e.preventDefault();
                         this.smoothScrollTo(targetElement);
@@ -126,10 +125,13 @@
             });
         },
 
-        // Language Switcher functionality
+        /**
+         * Language Switcher Component
+         * Manages language selection and persistence
+         */
         initLanguageSwitcher: function() {
             const langButtons = document.querySelectorAll('.lang');
-            
+
             if (langButtons.length === 0) return;
 
             // Get saved language from localStorage
@@ -149,7 +151,7 @@
             langButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const selectedLang = button.dataset.lang;
-                    
+
                     // Update active class on all buttons
                     langButtons.forEach(btn => {
                         if (btn.dataset.lang === selectedLang) {
@@ -158,10 +160,10 @@
                             btn.classList.remove('active');
                         }
                     });
-                    
+
                     // Save selected language to localStorage
                     localStorage.setItem('portfolio-lang', selectedLang);
-                    
+
                     // Dispatch custom event for other scripts to listen
                     document.dispatchEvent(new CustomEvent('portfolio-lang-change', {
                         detail: { lang: selectedLang }
@@ -170,7 +172,10 @@
             });
         },
 
-        // Scroll effects
+        /**
+         * Scroll Effects Component
+         * Adds background blur to header on scroll
+         */
         initScrollEffects: function() {
             let lastScrollY = window.scrollY;
             const header = document.getElementById('site-header');
@@ -180,7 +185,7 @@
             // Header scroll effect
             window.addEventListener('scroll', () => {
                 const currentScrollY = window.scrollY;
-                
+
                 // Add/remove background blur
                 if (currentScrollY > 50) {
                     header.classList.add('scrolled');
@@ -192,7 +197,10 @@
             });
         },
 
-        // Animations on scroll
+        /**
+         * Animations on Scroll Component
+         * Adds animate-in class when elements enter viewport
+         */
         initAnimations: function() {
             if (!this.config.animatedOnScroll) return;
 
@@ -214,23 +222,30 @@
             animatedElements.forEach(el => observer.observe(el));
         },
 
-        // Contact form handling
+        // ============================================================
+        // FORM COMPONENTS
+        // ============================================================
+
+        /**
+         * Contact Form Component
+         * Handles form submission via AJAX
+         */
         initContactForm: function() {
             const form = document.getElementById('portfolio-contact-form');
-            
+
             if (!form) return;
 
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                
+
                 const formData = new FormData(form);
                 const submitBtn = form.querySelector('button[type="submit"]');
                 const messagesDiv = document.getElementById('form-messages');
-                
+
                 // Show loading state
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Sending...';
-                
+
                 // Clear previous messages
                 if (messagesDiv) {
                     messagesDiv.innerHTML = '';
@@ -258,194 +273,53 @@
             });
         },
 
-        // Submit contact form via AJAX
+        /**
+         * Submit contact form via AJAX
+         * @param {FormData} formData - Form data to submit
+         * @returns {Promise} Response from server
+         */
         submitContactForm: async function(formData) {
             try {
                 const response = await fetch(portfolio_ajax.ajax_url, {
                     method: 'POST',
                     body: formData
                 });
-                
+
                 return await response.json();
             } catch (error) {
                 throw error;
             }
         },
 
-        // Show form message
+        /**
+         * Show form message
+         * @param {string} message - Message to display
+         * @param {string} type - Message type ('success' or 'error')
+         */
         showFormMessage: function(message, type) {
             const messagesDiv = document.getElementById('form-messages');
             if (!messagesDiv) return;
 
             messagesDiv.innerHTML = `<div class="message message-${type}">${message}</div>`;
             messagesDiv.className = `form-messages show message-${type}`;
-            
+
             // Auto hide after 5 seconds
             setTimeout(() => {
                 messagesDiv.className = 'form-messages';
             }, 5000);
         },
 
-        // Portfolio carousel functionality
-        initProjectsCarousel: function() {
-            const projectsSwiper = new Swiper('.projects-swiper', {
-                slidesPerView: 1,
-                spaceBetween: 5,
-                centeredSlides: false,
-                loop: false,
-                loopAdditionalSlides: 1,
-                slidesPerGroup: 1,
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: false,
-                },
-                navigation: {
-                    nextEl: '.carousel-nav.next',
-                    prevEl: '.carousel-nav.prev',
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 1,
-                        spaceBetween: 5,
-                        slidesPerGroup: 1,
-                        loopAdditionalSlides: 2,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 5,
-                        slidesPerGroup: 1,
-                        loopAdditionalSlides: 2,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 5,
-                        slidesPerGroup: 1,
-                        loopAdditionalSlides: 2,
-                    },
-                },
-            });
+        // ============================================================
+        // UTILITY COMPONENTS
+        // ============================================================
 
-            // Filter functionality
-            const filterButtons = document.querySelectorAll('.projects-filter .filter-btn');
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const filter = button.dataset.filter;
-
-                    // Update active button
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    // Filter slides
-                    const slides = document.querySelectorAll('.swiper-slide');
-                    slides.forEach(slide => {
-                        if (filter === 'apps' && slide.dataset.category === 'apps') {
-                            slide.style.display = 'block';
-                        } else if (filter === 'sites' && slide.dataset.category === 'sites') {
-                            slide.style.display = 'block';
-                        } else {
-                            slide.style.display = 'none';
-                        }
-                    });
-
-                    // Update swiper
-                    projectsSwiper.update();
-                });
-            });
-        },
-
-        // Portfolio filter functionality
-        initPortfolioFilter: function() {
-            const filterButtons = document.querySelectorAll('.portfolio-filters .filter-btn');
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const filter = button.dataset.filter;
-
-                    // Update active button
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    // Filter items
-                    portfolioItems.forEach(item => {
-                        if (filter === 'all' || item.dataset.category.includes(filter)) {
-                            item.style.display = 'block';
-                            setTimeout(() => item.classList.add('show'), 10);
-                        } else {
-                            item.classList.remove('show');
-                            setTimeout(() => item.style.display = 'none', this.config.animationDuration);
-                        }
-                    });
-                });
-            });
-        },
-
-        // Skills filter functionality
-        initSkillsFilter: function() {
-            const categoryButtons = document.querySelectorAll('.skills-categories .category-btn');
-            const skillItems = document.querySelectorAll('.skill-item');
-
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const category = button.dataset.category;
-                    
-                    // Update active button
-                    categoryButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    
-                    // Filter skills
-                    skillItems.forEach(item => {
-                        if (category === 'all' || item.dataset.category === category) {
-                            item.style.display = 'block';
-                            setTimeout(() => item.classList.add('show'), 10);
-                        } else {
-                            item.classList.remove('show');
-                            setTimeout(() => item.style.display = 'none', this.config.animationDuration);
-                        }
-                    });
-                });
-            });
-        },
-
-        // Recommendations carousel
-        initRecommendationsCarousel: function() {
-            const testimonialsSwiper = new Swiper('.testimonials-swiper', {
-                slidesPerView: 1,
-                spaceBetween: 32,
-                loop: false,
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 1,
-                        spaceBetween: 32,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 32,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 32,
-                    },
-                },
-            });
-        },
-
-        // Back to top button
+        /**
+         * Back to Top Button Component
+         * Shows/hides button based on scroll position
+         */
         initBackToTop: function() {
             const backToTopBtn = document.getElementById('back-to-top');
-            
+
             if (!backToTopBtn) return;
 
             // Show/hide button based on scroll
@@ -463,7 +337,10 @@
             });
         },
 
-        // Lazy loading for images
+        /**
+         * Lazy Loading for Images Component
+         * Loads images when they enter viewport
+         */
         initLazyLoading: function() {
             if ('IntersectionObserver' in window) {
                 const imageObserver = new IntersectionObserver((entries) => {
@@ -483,17 +360,30 @@
             }
         },
 
-        // Smooth scroll utility
+        // ============================================================
+        // UTILITY FUNCTIONS
+        // ============================================================
+
+        /**
+         * Smooth scroll to element
+         * @param {HTMLElement} element - Target element to scroll to
+         */
         smoothScrollTo: function(element) {
             const targetY = element.offsetTop - 80; // Account for fixed header
-            
+
             window.scrollTo({
                 top: targetY,
                 behavior: 'smooth'
             });
         },
 
-        // Utility: Debounce function
+        /**
+         * Debounce function
+         * Delays function execution until after wait milliseconds
+         * @param {Function} func - Function to debounce
+         * @param {number} wait - Wait time in milliseconds
+         * @returns {Function} Debounced function
+         */
         debounce: function(func, wait) {
             let timeout;
             return function executedFunction(...args) {
@@ -506,7 +396,13 @@
             };
         },
 
-        // Utility: Throttle function
+        /**
+         * Throttle function
+         * Limits function execution to once every limit milliseconds
+         * @param {Function} func - Function to throttle
+         * @param {number} limit - Time limit in milliseconds
+         * @returns {Function} Throttled function
+         */
         throttle: function(func, limit) {
             let inThrottle;
             return function() {
@@ -520,17 +416,28 @@
             };
         },
 
-        // Utility: Get current language
+        /**
+         * Get current language
+         * @returns {string} Current language or default 'pt'
+         */
         getCurrentLanguage: function() {
             return localStorage.getItem('portfolio-lang') || 'pt';
         },
 
-        // Utility: Set language
+        /**
+         * Set language
+         * @param {string} lang - Language to set
+         * @returns {string} Set language
+         */
         setLanguage: function(lang) {
             localStorage.setItem('portfolio-lang', lang);
             return lang;
         }
     };
+
+    // ============================================================
+    // INITIALIZATION
+    // ============================================================
 
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {

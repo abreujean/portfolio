@@ -202,6 +202,510 @@ function portfolio_career_customizer($wp_customize) {
         'type'        => 'checkbox',
     ));
 
+    // Professional Experience 3
+    $wp_customize->add_setting('career_professional_3_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_3_title', array(
+        'label'       => __('Experience 3 - Title', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_3_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_3_description', array(
+        'label'       => __('Experience 3 - Description', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_professional_3_tags', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_3_tags', array(
+        'label'       => __('Experience 3 - Tags', 'portfolio'),
+        'description' => __('Separate tags with commas', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_3_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_3_period', array(
+        'label'       => __('Experience 3 - Period', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_3_highlight', array(
+        'default'           => false,
+        'sanitize_callback' => 'rest_sanitize_boolean',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_3_highlight', array(
+        'label'       => __('Experience 3 - Highlight (Current)', 'portfolio'),
+        'description' => __('Mark as current position with green highlight', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'checkbox',
+    ));
+
+    // Professional Experience 4
+    $wp_customize->add_setting('career_professional_4_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_4_title', array(
+        'label'       => __('Experience 4 - Title', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_4_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_4_description', array(
+        'label'       => __('Experience 4 - Description', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_professional_4_tags', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_4_tags', array(
+        'label'       => __('Experience 4 - Tags', 'portfolio'),
+        'description' => __('Separate tags with commas', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_4_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_4_period', array(
+        'label'       => __('Experience 4 - Period', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_4_highlight', array(
+        'default'           => false,
+        'sanitize_callback' => 'rest_sanitize_boolean',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_4_highlight', array(
+        'label'       => __('Experience 4 - Highlight (Current)', 'portfolio'),
+        'description' => __('Mark as current position with green highlight', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'checkbox',
+    ));
+
+    // Professional Experience 5
+    $wp_customize->add_setting('career_professional_5_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_5_title', array(
+        'label'       => __('Experience 5 - Title', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_5_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_5_description', array(
+        'label'       => __('Experience 5 - Description', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_professional_5_tags', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_5_tags', array(
+        'label'       => __('Experience 5 - Tags', 'portfolio'),
+        'description' => __('Separate tags with commas', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_5_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_5_period', array(
+        'label'       => __('Experience 5 - Period', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_5_highlight', array(
+        'default'           => false,
+        'sanitize_callback' => 'rest_sanitize_boolean',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_5_highlight', array(
+        'label'       => __('Experience 5 - Highlight (Current)', 'portfolio'),
+        'description' => __('Mark as current position with green highlight', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'checkbox',
+    ));
+
+    // Professional Experience 6
+    $wp_customize->add_setting('career_professional_6_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_6_title', array(
+        'label'       => __('Experience 6 - Title', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_6_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_6_description', array(
+        'label'       => __('Experience 6 - Description', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_professional_6_tags', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_6_tags', array(
+        'label'       => __('Experience 6 - Tags', 'portfolio'),
+        'description' => __('Separate tags with commas', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_6_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_6_period', array(
+        'label'       => __('Experience 6 - Period', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_6_highlight', array(
+        'default'           => false,
+        'sanitize_callback' => 'rest_sanitize_boolean',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_6_highlight', array(
+        'label'       => __('Experience 6 - Highlight (Current)', 'portfolio'),
+        'description' => __('Mark as current position with green highlight', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'checkbox',
+    ));
+
+    // Professional Experience 7
+    $wp_customize->add_setting('career_professional_7_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_7_title', array(
+        'label'       => __('Experience 7 - Title', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_7_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_7_description', array(
+        'label'       => __('Experience 7 - Description', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_professional_7_tags', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_7_tags', array(
+        'label'       => __('Experience 7 - Tags', 'portfolio'),
+        'description' => __('Separate tags with commas', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_7_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_7_period', array(
+        'label'       => __('Experience 7 - Period', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_7_highlight', array(
+        'default'           => false,
+        'sanitize_callback' => 'rest_sanitize_boolean',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_7_highlight', array(
+        'label'       => __('Experience 7 - Highlight (Current)', 'portfolio'),
+        'description' => __('Mark as current position with green highlight', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'checkbox',
+    ));
+
+    // Professional Experience 8
+    $wp_customize->add_setting('career_professional_8_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_8_title', array(
+        'label'       => __('Experience 8 - Title', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_8_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_8_description', array(
+        'label'       => __('Experience 8 - Description', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_professional_8_tags', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_8_tags', array(
+        'label'       => __('Experience 8 - Tags', 'portfolio'),
+        'description' => __('Separate tags with commas', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_8_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_8_period', array(
+        'label'       => __('Experience 8 - Period', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_8_highlight', array(
+        'default'           => false,
+        'sanitize_callback' => 'rest_sanitize_boolean',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_8_highlight', array(
+        'label'       => __('Experience 8 - Highlight (Current)', 'portfolio'),
+        'description' => __('Mark as current position with green highlight', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'checkbox',
+    ));
+
+    // Professional Experience 9
+    $wp_customize->add_setting('career_professional_9_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_9_title', array(
+        'label'       => __('Experience 9 - Title', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_9_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_9_description', array(
+        'label'       => __('Experience 9 - Description', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_professional_9_tags', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_9_tags', array(
+        'label'       => __('Experience 9 - Tags', 'portfolio'),
+        'description' => __('Separate tags with commas', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_9_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_9_period', array(
+        'label'       => __('Experience 9 - Period', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_9_highlight', array(
+        'default'           => false,
+        'sanitize_callback' => 'rest_sanitize_boolean',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_9_highlight', array(
+        'label'       => __('Experience 9 - Highlight (Current)', 'portfolio'),
+        'description' => __('Mark as current position with green highlight', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'checkbox',
+    ));
+
+    // Professional Experience 10
+    $wp_customize->add_setting('career_professional_10_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_10_title', array(
+        'label'       => __('Experience 10 - Title', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_10_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_10_description', array(
+        'label'       => __('Experience 10 - Description', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_professional_10_tags', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_10_tags', array(
+        'label'       => __('Experience 10 - Tags', 'portfolio'),
+        'description' => __('Separate tags with commas', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_10_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_10_period', array(
+        'label'       => __('Experience 10 - Period', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_professional_10_highlight', array(
+        'default'           => false,
+        'sanitize_callback' => 'rest_sanitize_boolean',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_professional_10_highlight', array(
+        'label'       => __('Experience 10 - Highlight (Current)', 'portfolio'),
+        'description' => __('Mark as current position with green highlight', 'portfolio'),
+        'section'     => 'career_professional',
+        'type'        => 'checkbox',
+    ));
+
     // Academic Section
     $wp_customize->add_section('career_academic', array(
         'title'    => __('Academic Experiences', 'portfolio'),
@@ -293,6 +797,302 @@ function portfolio_career_customizer($wp_customize) {
 
     $wp_customize->add_control('career_academic_2_period', array(
         'label'       => __('Course 2 - Period', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    // Academic Experience 3
+    $wp_customize->add_setting('career_academic_3_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_3_title', array(
+        'label'       => __('Course 3 - Title', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_academic_3_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_3_description', array(
+        'label'       => __('Course 3 - Description', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_academic_3_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_3_period', array(
+        'label'       => __('Course 3 - Period', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    // Academic Experience 4
+    $wp_customize->add_setting('career_academic_4_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_4_title', array(
+        'label'       => __('Course 4 - Title', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_academic_4_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_4_description', array(
+        'label'       => __('Course 4 - Description', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_academic_4_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_4_period', array(
+        'label'       => __('Course 4 - Period', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    // Academic Experience 5
+    $wp_customize->add_setting('career_academic_5_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_5_title', array(
+        'label'       => __('Course 5 - Title', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_academic_5_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_5_description', array(
+        'label'       => __('Course 5 - Description', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_academic_5_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_5_period', array(
+        'label'       => __('Course 5 - Period', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    // Academic Experience 6
+    $wp_customize->add_setting('career_academic_6_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_6_title', array(
+        'label'       => __('Course 6 - Title', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_academic_6_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_6_description', array(
+        'label'       => __('Course 6 - Description', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_academic_6_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_6_period', array(
+        'label'       => __('Course 6 - Period', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    // Academic Experience 7
+    $wp_customize->add_setting('career_academic_7_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_7_title', array(
+        'label'       => __('Course 7 - Title', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_academic_7_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_7_description', array(
+        'label'       => __('Course 7 - Description', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_academic_7_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_7_period', array(
+        'label'       => __('Course 7 - Period', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    // Academic Experience 8
+    $wp_customize->add_setting('career_academic_8_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_8_title', array(
+        'label'       => __('Course 8 - Title', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_academic_8_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_8_description', array(
+        'label'       => __('Course 8 - Description', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_academic_8_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_8_period', array(
+        'label'       => __('Course 8 - Period', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    // Academic Experience 9
+    $wp_customize->add_setting('career_academic_9_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_9_title', array(
+        'label'       => __('Course 9 - Title', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_academic_9_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_9_description', array(
+        'label'       => __('Course 9 - Description', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_academic_9_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_9_period', array(
+        'label'       => __('Course 9 - Period', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    // Academic Experience 10
+    $wp_customize->add_setting('career_academic_10_title', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_10_title', array(
+        'label'       => __('Course 10 - Title', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'text',
+    ));
+
+    $wp_customize->add_setting('career_academic_10_description', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_10_description', array(
+        'label'       => __('Course 10 - Description', 'portfolio'),
+        'section'     => 'career_academic',
+        'type'        => 'textarea',
+    ));
+
+    $wp_customize->add_setting('career_academic_10_period', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('career_academic_10_period', array(
+        'label'       => __('Course 10 - Period', 'portfolio'),
         'section'     => 'career_academic',
         'type'        => 'text',
     ));

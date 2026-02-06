@@ -50,6 +50,12 @@ function portfolio_enqueue_assets() {
 	// Enqueue main JavaScript
 	wp_enqueue_script( 'portfolio-main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery', 'swiper-js' ), '1.0.0', true );
 
+	// Enqueue Projects Carousel
+	wp_enqueue_script( 'portfolio-carousel-projects', get_template_directory_uri() . '/assets/js/carousel-projects.js', array( 'swiper-js' ), '1.0.0', true );
+
+	// Enqueue Recommendations Carousel
+	wp_enqueue_script( 'portfolio-carousel-recommendations', get_template_directory_uri() . '/assets/js/carousel-recommendations.js', array( 'swiper-js' ), '1.0.0', true );
+
 	// Localize script for AJAX data
 	wp_localize_script(
 		'portfolio-main',

@@ -107,6 +107,7 @@ a.btn .icon,
     border: 1px solid rgba(16, 185, 129, 0.12);
     color: var(--text-primary);
     font-weight: 600;
+    max-width: fit-content;
 }
 
 .btn.whatsapp:hover {
@@ -166,6 +167,16 @@ a.btn .icon,
     .contact-title {
         font-size: 56px;
         line-height: 64px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .contact-subtitle {
+        text-align: center;
+    }
+
+    .contact-actions {
+        justify-content: center;
     }
 }
 

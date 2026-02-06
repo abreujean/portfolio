@@ -34,8 +34,7 @@
 
 /* Grid */
 .career-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: block;
     gap: 48px;
 }
 
@@ -154,6 +153,7 @@
 
     /* Grid: Two columns side by side */
     .career-grid {
+        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 48px;
     }
@@ -185,6 +185,7 @@
     }
 
     .career-grid {
+        display: grid;
         gap: 64px;
     }
 }
