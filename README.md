@@ -722,13 +722,12 @@ wp i18n make-pot . languages/portfolio.pot --domain=portfolio
 wp i18n make-json languages/ pt_BR --domain=portfolio
 ```
 
-### Traduzir com Loco Translate
+### Traduzir com G Translate
 
-1. Instalar plugin **Loco Translate**
-2. Acesse: **Loco Translate → Themes → Portfolio**
-3. Criar nova língua (ex: pt_BR)
-4. Traduzir strings
-5. Salvar
+1. Instalar plugin **G Translate**
+2. Acesse: **G Translate → Configurações**
+3. Personalizar 
+4. Salvar
 
 ---
 
