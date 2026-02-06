@@ -14,7 +14,7 @@ function portfolio_get_hero_data() {
     return array(
         'first_name'        => get_theme_mod('hero_first_name', 'Jean'),
         'last_name'         => get_theme_mod('hero_last_name', 'Abreu'),
-        'role_text'         => get_theme_mod('hero_role_text', 'FullStack developer'),
+        'role_text'         => get_theme_mod('hero_role_text', 'Full Stack developer'),
         'greeting_text'     => get_theme_mod('hero_greeting_text', '👋 Saudações!'),
         'status_text'       => get_theme_mod('hero_status_text', 'Status'),
         'hero_image'        => get_theme_mod('hero_image', get_template_directory_uri() . '/assets/images/avatar.png'),

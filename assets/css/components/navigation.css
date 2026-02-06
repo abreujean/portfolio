@@ -212,6 +212,66 @@
     opacity: 1;
 }
 
+/* GTranslate Plugin Notice - For admins when plugin not installed */
+.nav-lang-notice {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    background: rgba(255, 193, 7, 0.15);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    color: #ffc107;
+    text-decoration: none;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transition: all var(--transition-fast) ease;
+}
+
+.nav-lang-notice:hover {
+    background: rgba(255, 193, 7, 0.25);
+    border-color: #ffc107;
+    transform: translateY(-1px);
+}
+
+.lang-notice-icon {
+    font-size: var(--text-base);
+    animation: pulse-warning 2s ease-in-out infinite;
+}
+
+.lang-notice-text {
+    color: #ffc107;
+}
+
+@keyframes pulse-warning {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Fallback placeholder for non-admin users when plugin not installed */
+.nav-lang-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-full);
+    background: rgba(107, 92, 255, 0.1);
+    border: 1px solid rgba(107, 92, 255, 0.2);
+    color: var(--menu-link);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: default;
+}
+
+.lang-placeholder-text {
+    color: var(--menu-link);
+    letter-spacing: 0.5px;
+}
+
 /* Mobile Navigation Container */
 .nav-mobile {
     display: flex;
