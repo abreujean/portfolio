@@ -292,16 +292,16 @@
                 slidesPerView: 1,
                 spaceBetween: 5,
                 centeredSlides: false,
-                loop: true,
+                loop: false,
                 loopAdditionalSlides: 1,
                 slidesPerGroup: 1,
                 autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: true,
+                    delay: 3000,
+                    disableOnInteraction: false,
                 },
                 pagination: {
                     el: '.swiper-pagination',
-                    clickable: true,
+                    clickable: false,
                 },
                 navigation: {
                     nextEl: '.carousel-nav.next',
@@ -418,7 +418,7 @@
                 spaceBetween: 32,
                 loop: false,
                 autoplay: {
-                    delay: 2000,
+                    delay: 3000,
                     disableOnInteraction: false,
                 },
                 navigation: {
