@@ -32,9 +32,10 @@
     margin-bottom: 64px;
 }
 
-/* Grid */
+/* Grid - Mobile: Flex column layout */
 .career-grid {
-    display: block;
+    display: flex;
+    flex-direction: column;
     gap: 48px;
 }
 
