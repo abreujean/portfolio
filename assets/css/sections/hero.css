@@ -170,14 +170,18 @@
 /* Hero Image Container */
 .hero-image-container {
     width: 100%;
+    min-height: 300px;
     overflow: hidden;
     margin-bottom: var(--spacing-2xl);
 }
 
 /* Hero Image */
 .hero-image {
+    display: block;
     transition: 0.6s ease-in-out;
-    height: 100%;
+    width: 100%;
+    min-height: 300px;
+    height: auto;
     object-fit: cover;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
@@ -415,11 +419,14 @@
     /* Hero Image - Tablet */
     .hero-image {
         margin: 0;
+        min-height: 350px;
+        height: auto;
     }
 
     .hero-image-container {
         width: 100%;
         max-width: 350px;
+        min-height: 350px;
         overflow: visible;
     }
 }
@@ -500,11 +507,14 @@
     /* Hero Image - Desktop */
     .hero-image {
         object-position: center;
+        min-height: 400px;
+        height: auto;
     }
 
     .hero-image-container {
         width: 100%;
         max-width: 400px;
+        min-height: 400px;
         overflow: visible;
         display: flex;
         align-items: center;
@@ -535,5 +545,11 @@
     .hero-image {
         margin-top: var(--spacing-2xl);
         margin-left: 2.5%;
+        min-height: 250px;
+        height: 250px;
+    }
+
+    .hero-image-container {
+        min-height: 250px;
     }
 }
