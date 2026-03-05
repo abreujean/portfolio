@@ -42,7 +42,7 @@
         /**
          * Initialize the application
          * Bootstraps all global components and feature modules
-         */
+          */
         init: function() {
             console.log('Portfolio theme initialized');
 
@@ -53,6 +53,7 @@
             this.initAnimations();
             this.initContactForm();
             this.initBackToTop();
+            this.initCareerAutoScroll();
 
             // Initialize utility components
             this.initLazyLoading();
@@ -401,6 +402,104 @@
             // Scroll to top
             backToTopBtn.addEventListener('click', () => {
                 this.smoothScrollTo(document.documentElement);
+            });
+        },
+
+        /**
+         * Career Auto-Scroll Component
+         * Automatically scrolls career cards on mobile
+         */
+        initCareerAutoScroll: function() {
+            // Only activate on mobile (< 768px)
+            if (window.innerWidth >= 768) return;
+
+            const containers = document.querySelectorAll('.career-cards-container');
+
+            if (containers.length === 0) return;
+
+            // Configuration
+            const scrollInterval = 4000; // 4 seconds per card
+            const scrollSpeed = 500; // Animation duration in ms
+
+            // Store intervals for each container
+            const intervals = {};
+
+            containers.forEach((container, index) => {
+                // Skip if container has less than 2 cards
+                const cards = container.querySelectorAll('.career-card');
+                if (cards.length < 2) return;
+
+                let currentIndex = 0;
+                let isPaused = false;
+
+                /**
+                 * Scroll to next card
+                 */
+                function scrollToNextCard() {
+                    if (isPaused) return;
+
+                    currentIndex = (currentIndex + 1) % cards.length;
+
+                    const nextCard = cards[currentIndex];
+                    if (nextCard) {
+                        // Smooth scroll to next card
+                        container.scrollTo({
+                            left: nextCard.offsetLeft - container.offsetLeft,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+
+                /**
+                 * Start auto-scroll
+                 */
+                function startAutoScroll() {
+                    clearInterval(intervals[index]);
+                    intervals[index] = setInterval(scrollToNextCard, scrollInterval);
+                }
+
+                /**
+                 * Stop auto-scroll
+                 */
+                function stopAutoScroll() {
+                    clearInterval(intervals[index]);
+                }
+
+                /**
+                 * Pause on user interaction
+                 */
+                function pauseAutoScroll() {
+                    isPaused = true;
+                }
+
+                /**
+                 * Resume auto-scroll
+                 */
+                function resumeAutoScroll() {
+                    isPaused = false;
+                }
+
+                // Start auto-scroll initially
+                startAutoScroll();
+
+                // Pause on user interaction (mouse/touch)
+                container.addEventListener('mouseenter', pauseAutoScroll);
+                container.addEventListener('mouseleave', resumeAutoScroll);
+                container.addEventListener('touchstart', pauseAutoScroll);
+                container.addEventListener('touchend', resumeAutoScroll);
+
+                // Stop when not visible (performance)
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            startAutoScroll();
+                        } else {
+                            stopAutoScroll();
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                observer.observe(container);
             });
         },
 
