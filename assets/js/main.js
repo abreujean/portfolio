@@ -81,6 +81,17 @@
             function toggleMenu(show) {
                 const isShown = show !== undefined ? show : !primaryMenu.classList.contains('active');
 
+                // Limpar classes active ao abrir o menu
+                if (isShown && menuOverlay) {
+                    const menuItems = menuOverlay.querySelectorAll('.primary-menu-list > li');
+                    menuItems.forEach(menuItem => {
+                        menuItem.classList.remove('active');
+                    });
+
+                    // Also remove any WordPress active classes
+                    removeWordPressActiveClasses();
+                }
+
                 primaryMenu.classList.toggle('active', isShown);
                 menuOverlay.classList.toggle('active', isShown);
                 menuToggle.setAttribute('aria-expanded', isShown);
@@ -108,6 +119,62 @@
                     toggleMenu(false);
                 }
             });
+
+            /**
+             * Remove all WordPress active classes from menu items
+             * This prevents WordPress from marking items as active via CSS
+             */
+            function removeWordPressActiveClasses() {
+                if (!menuOverlay) return;
+
+                const menuItems = menuOverlay.querySelectorAll('.primary-menu-list > li');
+                menuItems.forEach(menuItem => {
+                    // Remove all WordPress menu active classes
+                    const classList = Array.from(menuItem.classList);
+                    classList.forEach(className => {
+                        if (className.includes('current') ||
+                            className.includes('page-item') ||
+                            className === 'menu-item-home') {
+                            menuItem.classList.remove(className);
+                        }
+                    });
+                });
+            }
+
+            // Remove active classes from all menu items on page load
+            if (menuOverlay) {
+                const menuItems = menuOverlay.querySelectorAll('.primary-menu-list > li');
+                menuItems.forEach(menuItem => {
+                    menuItem.classList.remove('active');
+                });
+
+                // Also remove any WordPress active classes
+                removeWordPressActiveClasses();
+            }
+
+            // Remove WordPress active classes on URL change (e.g., navigation)
+            window.addEventListener('hashchange', removeWordPressActiveClasses);
+            window.addEventListener('popstate', removeWordPressActiveClasses);
+
+            // Manage active state on menu items
+            if (menuOverlay) {
+                const menuItems = menuOverlay.querySelectorAll('.primary-menu-list > li');
+
+                menuItems.forEach(item => {
+                    const link = item.querySelector('a');
+                    if (link) {
+                        link.addEventListener('click', (e) => {
+                            // Remove active class from all menu items
+                            menuItems.forEach(menuItem => {
+                                menuItem.classList.remove('active');
+                            });
+
+                            // Add active class to clicked menu item
+                            item.classList.add('active');
+                        });
+                    }
+                });
+            }
 
             // Smooth scroll for navigation links
             const navLinks = document.querySelectorAll('a[href^="#"]');

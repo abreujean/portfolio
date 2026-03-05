@@ -862,3 +862,38 @@
         font-weight: 600;
     }
 }
+
+/* ============================================================
+   MOBILE MENU ACTIVE STATE FIX
+   Forces WordPress menu classes to be inactive in mobile menu
+   Only JavaScript .active class should mark items as active
+   ============================================================ */
+
+/* Mobile menu - Override WordPress active classes */
+.menu-overlay .primary-menu-list > li[class*="current"] > a,
+.menu-overlay .primary-menu-list > li[class*="page-item"] > a,
+.menu-overlay .primary-menu-list > li.menu-item-home > a {
+    color: var(--menu-link) !important;
+    background: transparent !important;
+}
+
+.menu-overlay .primary-menu-list > li[class*="current"] > a::before,
+.menu-overlay .primary-menu-list > li[class*="page-item"] > a::before,
+.menu-overlay .primary-menu-list > li.menu-item-home > a::before {
+    height: 0 !important;
+}
+
+/* Desktop/Tablet menu - Override WordPress active classes */
+.primary-menu-list > li[class*="current"] > a,
+.primary-menu-list > li[class*="page-item"] > a,
+.primary-menu-list > li.menu-item-home > a {
+    color: var(--menu-link) !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid transparent !important;
+}
+
+.primary-menu-list > li[class*="current"] > a::after,
+.primary-menu-list > li[class*="page-item"] > a::after,
+.primary-menu-list > li.menu-item-home > a::after {
+    width: 0 !important;
+}
