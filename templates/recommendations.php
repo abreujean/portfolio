@@ -33,8 +33,8 @@ $recommendations = array_filter($recommendations_data['recommendations'], functi
         </div>
 
         <div class="testimonials-nav">
-            <button class="nav-btn swiper-button-prev"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/right-arrow.svg');?>" alt="right arrow"> </button>
-            <button class="nav-btn swiper-button-next"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/left-arrow.svg');?>" alt="right arrow"> </button>
+            <button class="nav-btn swiper-button-prev"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/right-arrow.svg');?>" alt="" aria-hidden="true"> </button>
+            <button class="nav-btn swiper-button-next"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/left-arrow.svg');?>" alt="" aria-hidden="true"> </button>
         </div>
     </div>
 

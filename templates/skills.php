@@ -13,6 +13,7 @@ $skills_data = portfolio_get_skills_data();
 $skills_icons = array_filter($skills_data['icons'], function($icon) {
     return !empty($icon);
 });
+$skill_labels = $skills_data['icon_labels'];
 ?>
 
 <section class="skills-section" id="skills-section">
@@ -40,10 +41,10 @@ $skills_icons = array_filter($skills_data['icons'], function($icon) {
     <!-- Icons -->
     <?php if (!empty($skills_icons)) : ?>
         <div class="skills-icons">
-            <?php foreach ($skills_icons as $icon) : ?>
+            <?php foreach ($skills_icons as $index => $icon) : ?>
                 <?php if (!empty($icon)) : ?>
                     <div class="skill-icon">
-                        <img src="<?php echo esc_url($icon); ?>" alt="Skill icon" loading="lazy" />
+                        <img src="<?php echo esc_url($icon); ?>" alt="<?php echo esc_attr(!empty($skill_labels[$index]) ? $skill_labels[$index] : 'Skill'); ?>" loading="lazy" />
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>

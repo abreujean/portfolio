@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
         <span class="logo-mark" >
             <img 
                 src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/logo.svg'); ?>" 
-                alt="<?php esc_attr_e('Extra Logo', 'portfolio'); ?>" 
+                alt="<?php esc_attr_e('Logo Jean Abreu - Programador PHP Freelancer', 'portfolio'); ?>" 
             />
         </span>
     <?php endif; ?>

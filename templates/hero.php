@@ -64,7 +64,7 @@ $current_lang = portfolio_get_current_lang();
             <div class="hero-image-container">
                 <img 
                     src="<?php echo esc_url($hero_data['hero_image']); ?>" 
-                    alt="Hero Image" 
+                    alt="<?php echo esc_attr(implode(' - ', array_filter(array($hero_data['first_name'] . ' ' . $hero_data['last_name'], $hero_data['role_text'])))); ?>" 
                     class="hero-image"
                 >
             </div>

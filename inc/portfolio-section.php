@@ -39,6 +39,7 @@ function portfolio_get_projects() {
                 'title'       => $title,
                 'description' => get_theme_mod("portfolio_project_{$i}_description", ''),
                 'image'       => get_theme_mod("portfolio_project_{$i}_image", ''),
+                'image_alt'   => get_theme_mod("portfolio_project_{$i}_image_alt", ''),
                 'stack'       => get_theme_mod("portfolio_project_{$i}_stack", ''),
                 'preview_url' => get_theme_mod("portfolio_project_{$i}_preview_url", ''),
                 'video_url'   => get_theme_mod("portfolio_project_{$i}_video_url", ''),

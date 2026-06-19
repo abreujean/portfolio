@@ -128,10 +128,24 @@ function portfolio_portfolio_customizer($wp_customize) {
 
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "portfolio_project_{$i}_image", array(
             'label'       => sprintf(__('Project %d - Image', 'portfolio'), $i),
-            'description' => __('Upload project image (recommended size: 340x180px)', 'portfolio'),
+            'description' => __('Upload project image (recommended size: 340x180px). Rename the file with keywords before uploading (e.g., case-sistema-laravel.jpg).', 'portfolio'),
             'section'     => 'portfolio_projects',
             'settings'    => "portfolio_project_{$i}_image",
         )));
+
+        // Project Image Alt Text
+        $wp_customize->add_setting("portfolio_project_{$i}_image_alt", array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport'         => 'refresh',
+        ));
+
+        $wp_customize->add_control("portfolio_project_{$i}_image_alt", array(
+            'label'       => sprintf(__('Project %d - Image Alt Text', 'portfolio'), $i),
+            'description' => __('Describe the image with keywords (e.g., "Sistema de gestão desenvolvido com Framework Laravel e PHP"). Leave blank to use the project title.', 'portfolio'),
+            'section'     => 'portfolio_projects',
+            'type'        => 'text',
+        ));
 
         // Project Stack
         $wp_customize->add_setting("portfolio_project_{$i}_stack", array(
